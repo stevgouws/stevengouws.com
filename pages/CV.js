@@ -20,18 +20,62 @@ export default function CV() {
         <Job
           company="Ingresso Group Ltd"
           position="Front-End Engineer"
-          date="March 2019 – current"
+          duration="March 2019 – current"
           location="London"
-        />
-        <h3>Software Developer - Ebit Technologies</h3>
-        <p>Intermediate: June 2017 – February 2019</p>
-        <p>Junior: April 2016 – June 2017</p>
-        <p>
-          At Ebit we develop web applications and a few mobile apps. Our main
-          application is dialing software that centers around debt collection on
-          behalf of big commercial companies and also the South African
-          government tax service.
-        </p>
+          achievements={["One", "Two", "Three"]}
+          tech={[
+            "React & Redux",
+            "AngularJS",
+            "Jest",
+            "Jasmine",
+            "React Testing Library",
+            "Python",
+            "Django",
+          ]}
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+          voluptatibus voluptatum minima repudiandae, culpa sapiente nobis
+          necessitatibus numquam vel inventore, ratione odio fugit suscipit
+          voluptatem architecto libero quia ex! Alias.
+        </Job>
+        <Job
+          company="Ebit Technologies"
+          position="Software Developer"
+          duration="April 2016 – February 2017"
+          location="Cape Town"
+          achievements={[
+            "I knew practically no programming at the start of this job but seized the opportunity and learned quickly",
+            "Received the 'most improved developer' award in April 2017",
+            "Promoted from Junior to Intermediate after just over a year",
+          ]}
+          exampleTasks={[
+            "Built a component library with Vue for the app",
+            "Updated codebase from Vue 1 to Vue 2 and Vuex 1 to Vuex 3",
+            "Rebuilt Web Sockets from scratch using Node for real time communication between agents",
+            "Built real time communication for agents with Websockets",
+            "Implemented a large redesign on an app-wide level",
+          ]}
+          tech={[
+            "VueJS",
+            "Laravel (PHP)",
+            "Javascript (ES5, ES6)",
+            "HTML, CSS & Stylus",
+            "NodeJS",
+            "SQL Server",
+            "Git",
+            "Linux (Ubuntu)",
+            "Wordpress",
+            "Redis",
+            "Docker",
+            "Electron",
+            "Nginx",
+            "Websockets",
+          ]}
+        >
+          At Ebit we developed web applications and a mobile app. Our main
+          application was call-centre dialing software for debt collection on
+          behalf of companies and also the South African government tax service.
+        </Job>
         <h4>Responsibilities:</h4>
         <ul>
           <li>Writing Back-End REST APIs mostly with Laravel</li>

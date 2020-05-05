@@ -36,7 +36,7 @@ export default function Icon({ name, text, classes: additionalClasses }) {
 
 Icon.propTypes = {
   name: string.isRequired,
-  text: string.isRequired,
+  // text: string.isRequired,
   classes: string,
 };
 
