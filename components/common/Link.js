@@ -1,4 +1,6 @@
-export default function Link({ children, href, target, displayBlock }) {
+import { string, bool } from "prop-types";
+import Icon from "./Icon";
+export default function Link({ children, href, target, displayBlock, icon }) {
   function AnchorTag() {
     return (
       <a
@@ -11,6 +13,8 @@ export default function Link({ children, href, target, displayBlock }) {
     );
   }
 
+  if (icon) return <Icon name={icon} text={<AnchorTag />} />;
+
   if (displayBlock)
     return (
       <div>
@@ -20,3 +24,13 @@ export default function Link({ children, href, target, displayBlock }) {
 
   return <AnchorTag />;
 }
+
+Link.propTypes = {
+  href: string.isRequired,
+  target: string,
+  displayBlock: bool,
+};
+
+Link.defaultProps = {
+  displayBlock: false,
+};

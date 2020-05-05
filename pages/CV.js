@@ -1,6 +1,8 @@
 import Layout from "../components/common/Layout";
 import Link from "../components/common/Link";
 import Section from "../components/common/Section";
+import Job from "../components/CV/Job";
+import Icon from "../components/common/Icon";
 
 export default function CV() {
   return (
@@ -15,9 +17,12 @@ export default function CV() {
         </div>
       </Section>
       <Section>
-        <h2>Tech Career</h2>
-        <h3>Front-End Engineer - Ingresso Group Limited</h3>
-        <p>March 2019 – current | London</p>
+        <Job
+          company="Ingresso Group Ltd"
+          position="Front-End Engineer"
+          date="March 2019 – current"
+          location="London"
+        />
         <h3>Software Developer - Ebit Technologies</h3>
         <p>Intermediate: June 2017 – February 2019</p>
         <p>Junior: April 2016 – June 2017</p>
@@ -66,7 +71,7 @@ function Introduction() {
         I get a kick out of it every single time I learn a shorter, cleaner,
         faster or more maintainable way to code something and I use{" "}
         <Link href="https://sivers.org/srs" target="_blank">
-          spaced repetition learning software
+          spaced repetition learning
         </Link>{" "}
         on a daily basis to help cement new things I learn.
       </p>
@@ -81,13 +86,18 @@ function ContactDetails({ classes }) {
       <div>West Kensington</div>
       <div>London</div>
       <div className="mb-4">W14 8AP</div>
-      <Link displayBlock href="tel:+447780743335">
+      <Link displayBlock href="tel:+447780743335" icon="phone">
         07780743335
       </Link>
-      <Link displayBlock href="mailto:steven@stevengouws.com">
+      <Link displayBlock href="mailto:steven@stevengouws.com" icon="email">
         steven@stevengouws.com
       </Link>
-      <Link displayBlock href="https://github.com/stevgouws" target="_blank">
+      <Link
+        displayBlock
+        href="https://github.com/stevgouws"
+        icon="globe"
+        target="_blank"
+      >
         github.com/stevgouws
       </Link>
     </div>
