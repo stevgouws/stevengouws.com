@@ -2,7 +2,6 @@ import Layout from "../components/common/Layout";
 import Link from "../components/common/Link";
 import Section from "../components/common/Section";
 import Job from "../components/CV/Job";
-import Icon from "../components/common/Icon";
 
 export default function CV() {
   return (
@@ -22,31 +21,81 @@ export default function CV() {
           position="Front-End Engineer"
           duration="March 2019 – current"
           location="London"
-          achievements={["One", "Two", "Three"]}
+          achievements={[
+            "Refactored a lot of legacy AngularJS code reducing technical debt",
+            "Increased test coverage for parts of application that was previously untested",
+            "Surfaced and fixed a bug in the general error handling strategy that caused a lot of user facing errors to be discarded and go unnoticed",
+          ]}
+          exampleTasks={[
+            "Worked out and implemented a strategy to modularise Selenium tests for easy re-use so that you can compose tests out of other tests",
+            "Implemented Stripe Card integration to support SCA-2 ",
+            "Implemented dynamic pricing for ticket insurance depending on total ticket prices",
+            "Built and maintained a bunch of React and AngularJS components",
+            <>
+              Designed and created mock-ups for Special Offer and other info
+              indicators for our event calendar. An example can be seen on left
+              side of the page{" "}
+              <Link
+                href="https://user-images.githubusercontent.com/13498291/57140095-dbbf5f80-6dae-11e9-970a-923e819a8eca.png"
+                target="_blank"
+              >
+                here
+              </Link>{" "}
+              . (The right side was pre-existing).
+            </>,
+          ]}
           tech={[
             "React & Redux",
             "AngularJS",
             "Jest",
             "Jasmine",
+            "Enzyme",
             "React Testing Library",
-            "Python",
+            "Selenium",
+            "NodeJS",
+            "Less",
+            "Google Optimise",
+            "Python & Pytest",
             "Django",
+            "Bash Scripting",
           ]}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-          voluptatibus voluptatum minima repudiandae, culpa sapiente nobis
-          necessitatibus numquam vel inventore, ratione odio fugit suscipit
-          voluptatem architecto libero quia ex! Alias.
+          <p>
+            I work mainly on a White-label for selling event and theatre
+            tickets. We run the White-label under our own{" "}
+            <Link
+              href="https://www.fromtheboxoffice.com/category/162-theatre/"
+              target="_blank"
+            >
+              From The Box Office
+            </Link>{" "}
+            brand where we sell directly to an average of about 500,000 unique
+            monthly visitors.
+          </p>
+          <p>
+            We also have clients who use our White-label (or parts thereof)
+            under their own brands. For example,{" "}
+            <Link
+              href="https://theatre.ticketmaster.co.uk/book/17ZC6-sister-act-the-musical/"
+              target="_blank"
+            >
+              Ticketmaster
+            </Link>{" "}
+            who uses our Booking App and Checkout for theatre shows.
+          </p>
+          <p></p>
         </Job>
         <Job
           company="Ebit Technologies"
           position="Software Developer"
-          duration="April 2016 – February 2017"
+          duration={[
+            "April 2016 – June 2017 | Junior",
+            "June 2017 – February 2019 | Intermediate",
+          ]}
           location="Cape Town"
           achievements={[
-            "I knew practically no programming at the start of this job but seized the opportunity and learned quickly",
-            "Received the 'most improved developer' award in April 2017",
             "Promoted from Junior to Intermediate after just over a year",
+            'Received the "most improved developer" award in April 2017',
           ]}
           exampleTasks={[
             "Built a component library with Vue for the app",
@@ -72,23 +121,26 @@ export default function CV() {
             "Websockets",
           ]}
         >
-          At Ebit we developed web applications and a mobile app. Our main
-          application was call-centre dialing software for debt collection on
-          behalf of companies and also the South African government tax service.
+          <p>
+            At Ebit we developed web applications and a mobile app. Our main
+            application was call-centre dialing software for debt collection on
+            behalf of companies and also the South African government tax
+            service.
+          </p>
         </Job>
-        <h4>Responsibilities:</h4>
-        <ul>
-          <li>Writing Back-End REST APIs mostly with Laravel</li>
-          <li>
-            Writing Front-End applications and single page apps mostly with Vue
-            2
-          </li>
-          <li>Implementing pixel perfect styles from designs</li>
-          <li>Attending meetings with clients etc. (Agile, Kanban)</li>
-          <li>Finding and fixing bugs</li>
-        </ul>
-        <h5>This is h5</h5>
-        <h6>This is h6</h6>
+        <Job
+          company="Admakers International"
+          position="Web Developer"
+          duration="September 2015 – March 2016"
+          location="Cape Town"
+          tech={["Wordpress", "Photoshop"]}
+          isSimple
+        >
+          <p>
+            I was part of a small web team building and maintaining client
+            websites and converting designs to html emails.
+          </p>
+        </Job>
       </Section>
     </Layout>
   );
