@@ -1,5 +1,6 @@
 import { string, array, oneOfType, bool } from "prop-types";
 import Icon from "../common/Icon";
+import List from "../common/List";
 
 export default function Job({
   children,
@@ -45,13 +46,7 @@ export default function Job({
     return (
       <div className="mb-4">
         <h4 className="mb-0">Achievements</h4>
-        <ul className="ml-5">
-          {achievements.map((achievement) => (
-            <li className="list-disc list-outside" key={achievement}>
-              {achievement}
-            </li>
-          ))}
-        </ul>
+        <List items={achievements} />
       </div>
     );
   }
@@ -61,13 +56,7 @@ export default function Job({
     return (
       <div>
         <h4 className="mb-0">Some things I worked on</h4>
-        <ul className="ml-5">
-          {exampleTasks.map((task) => (
-            <li className="list-disc list-outside" key={task}>
-              {task}
-            </li>
-          ))}
-        </ul>
+        <List items={exampleTasks} />
       </div>
     );
   }
@@ -76,16 +65,7 @@ export default function Job({
     return (
       <div className="ml-4">
         <h4 className="mb-0">Tech</h4>
-        <ul className="ml-5">
-          {tech.map((techItem) => (
-            <li
-              className="list-disc list-outside whitespace-no-wrap"
-              key={techItem}
-            >
-              {techItem}
-            </li>
-          ))}
-        </ul>
+        <List items={tech} noWrap />
       </div>
     );
   }

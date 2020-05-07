@@ -1,6 +1,7 @@
 import Layout from "../components/common/Layout";
 import Link from "../components/common/Link";
 import Section from "../components/common/Section";
+import List from "../components/common/List";
 import Job from "../components/CV/Job";
 
 export default function CV() {
@@ -141,6 +142,17 @@ export default function CV() {
             websites and converting designs to html emails.
           </p>
         </Job>
+      </Section>
+      <Section>
+        <h3>Formal Education</h3>
+        <List
+          items={[
+            "Diploma in Computer Systems Engineering (2 years), Damelin College, Bloemfontein South Africa (2003) ",
+            "6 Microsoft International MCSE exams passed (2004)",
+            "Comptia A+ and N+ certified (2004)",
+            " Matriculated with merit and received a distinction in English, Goudveld High School, Welkom, South Africa (2001) ",
+          ]}
+        />
       </Section>
     </Layout>
   );
