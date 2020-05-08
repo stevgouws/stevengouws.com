@@ -1,6 +1,7 @@
 import { string, array, oneOfType, bool } from "prop-types";
 import Icon from "../common/Icon";
 import List from "../common/List";
+import Section from "../common/Section";
 
 export default function Job({
   children,
@@ -31,11 +32,11 @@ export default function Job({
   function Duration() {
     if (Array.isArray(duration)) {
       return (
-        <>
+        <div class="flex">
           {duration.map((item) => (
-            <Icon key={item} name="calendar" text={item} />
+            <Icon key={item} name="calendar" text={item} classes="mr-4" />
           ))}
-        </>
+        </div>
       );
     }
     return <Icon name="calendar" text={duration} />;
@@ -63,15 +64,20 @@ export default function Job({
 
   function Tech() {
     return (
-      <div className="ml-4">
+      <div className="tech ml-4 flex-shrink-0">
         <h4 className="mb-0">Tech</h4>
         <List items={tech} noWrap />
+        <style jsx>{`
+          .tech {
+            flex-basis: 166px;
+          }
+        `}</style>
       </div>
     );
   }
 
   return (
-    <div className="mb-4">
+    <Section>
       <Heading />
       <div className="mb-4 flex justify-between">
         {isSimple ? (
@@ -86,9 +92,9 @@ export default function Job({
       </div>
       {!isSimple && <div>{children}</div>}
       <style jsx>{`
-        break-inside: avoid;
+        // break-inside: avoid;
       `}</style>
-    </div>
+    </Section>
   );
 }
 
