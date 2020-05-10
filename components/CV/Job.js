@@ -2,6 +2,7 @@ import { string, array, oneOfType, bool } from "prop-types";
 import Icon from "../common/Icon";
 import List from "../common/List";
 import Section from "../common/Section";
+import Duration from "../CV/Duration";
 
 export default function Job({
   children,
@@ -23,23 +24,10 @@ export default function Job({
         </h3>
         <div className={`flex ${Array.isArray(duration) ? "flex-col" : ""}`}>
           <Icon name="location" text={location} classes="mr-2" />
-          <Duration />
+          <Duration duration={duration} />
         </div>
       </div>
     );
-  }
-
-  function Duration() {
-    if (Array.isArray(duration)) {
-      return (
-        <div class="flex">
-          {duration.map((item) => (
-            <Icon key={item} name="calendar" text={item} classes="mr-4" />
-          ))}
-        </div>
-      );
-    }
-    return <Icon name="calendar" text={duration} />;
   }
 
   function Achievements() {

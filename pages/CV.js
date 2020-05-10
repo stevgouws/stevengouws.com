@@ -4,6 +4,7 @@ import Section from "../components/common/Section";
 import List from "../components/common/List";
 import Icon from "../components/common/Icon";
 import Job from "../components/CV/Job";
+import Duration from "../components/CV/Duration";
 
 export default function CV() {
   return (
@@ -214,14 +215,19 @@ function ContactDetails({ classes }) {
 
 function Education() {
   return (
-    <div className="mb-4">
-      <h3 className="mb-0">Education</h3>
-      <Icon name="location" text="South Africa" classes="mb-4" />
+    <div className="mb-4 flex items-center justify-between">
+      <div className="">
+        <h3 className="mb-0">Education</h3>
+        <div className="flex flex-col">
+          <Icon name="location" text="South Africa" classes="mr-2" />
+          <Duration duration="2001 - 2004"></Duration>
+        </div>
+      </div>
       <List
         items={[
-          "Comptia A+ and N+ certified & 6 Microsoft MCSE exams passed (2004)",
-          "Diploma in Computer Systems Engineering - Damelin College (2003) ",
-          " Matriculated with merit and received a distinction in English (2001) ",
+          "Diploma in Computer Systems Engineering - Damelin College ",
+          "Comptia A+ and N+ certified & 6 Microsoft MCSE exams passed",
+          " Matriculated with merit and a distinction in English ",
         ]}
       />
     </div>
@@ -230,15 +236,19 @@ function Education() {
 
 function PreTechCareer() {
   return (
-    <div>
-      <h3 className="mb-0">Career prior to Tech</h3>
-      <Icon name="location" text="London" classes="mb-4" />
-      <p>
-        I worked in the the hospitality industry from 2004 to 2015. I started as
-        a security guard with no experience and progressed to Senior Guest
-        Service Manager where I managed a team of 11 Guest Service Managers at a
-        300 bedroom, 4-star hotel in central London.
-      </p>
+    <div className="mb-4 flex items-center justify-between">
+      <div className="">
+        <h3 className="mb-0">Hospitality Career</h3>
+        <div className="flex flex-col">
+          <Icon name="location" text="London" classes="mr-2" />
+          <Duration duration="2004 - 2015"></Duration>
+        </div>
+      </div>
+      <div>
+        I started as a security guard with no experience and progressed to
+        Senior Guest Service Manager where I directly managed a team of 11 Guest
+        Service Managers at a 300 bedroom, 4-star hotel in central London.
+      </div>
     </div>
   );
 }
