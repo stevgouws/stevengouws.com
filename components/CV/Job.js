@@ -6,6 +6,7 @@ import Duration from "../CV/Duration";
 
 export default function Job({
   children,
+  hideHrForPrint,
   company,
   position,
   duration,
@@ -16,14 +17,14 @@ export default function Job({
   softSkills,
 }) {
   return (
-    <Section>
+    <Section hideHrForPrint={hideHrForPrint}>
       <Heading />
       <div className="mb-4 flex justify-between">
-        <div className="first-child:mb-4">
+        <div className="flex-1">
           <Achievements />
           <Tasks />
         </div>
-        <div className="ml-4 w-1/3">
+        <div className="ml-4 w-1/4">
           <Tech />
           <SoftSkills />
           {/* <style jsx>{`
@@ -77,13 +78,13 @@ export default function Job({
     );
   }
 
-  function RightColItem({ heading, items, noWrap }) {
+  function RightColItem({ heading, items, noWrap, classes }) {
     if (!items.length) return null;
     return (
       // SG_TODO:  remove shrink?
-      <div className="flex-shrink-0 first:mb-4">
+      <div className={`flex-shrink-0 ${classes}`.trim()}>
         <h4 className="mb-0">{heading}</h4>
-        <List items={items} noWrap={noWrap} />
+        <List items={items} noWrap={noWrap} styleType="dash" styleInside />
       </div>
     );
   }
@@ -93,11 +94,14 @@ export default function Job({
   }
 
   function SoftSkills() {
-    return <RightColItem heading="Soft Skills" items={softSkills} />;
+    return (
+      <RightColItem heading="Soft Skills" items={softSkills} classes="mt-4" />
+    );
   }
 }
 
 Job.propTypes = {
+  hideHrForPrint: bool,
   company: string.isRequired,
   position: string.isRequired,
   duration: oneOfType([string.isRequired, array.isRequired]),
@@ -109,6 +113,7 @@ Job.propTypes = {
 };
 
 Job.defaultProps = {
+  hideHrForPrint: false,
   achievements: [],
   exampleTasks: [],
   tech: [],

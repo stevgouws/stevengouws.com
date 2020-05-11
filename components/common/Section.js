@@ -1,13 +1,13 @@
-export default function Section({ children, classes }) {
+export default function Section({ children, hideHrForPrint, classes }) {
   return (
     <section className={classes}>
       {children}
-      <hr className="my-4" />
+      <hr className={`my-4 ${hideHrForPrint ? "print:hidden" : ""}`.trim()} />
       <style jsx>
         {`
-          // section {
-          //   break-inside: avoid;
-          // }
+          section:last-child hr {
+            display: none;
+          }
         `}
       </style>
     </section>

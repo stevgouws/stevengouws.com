@@ -11,14 +11,15 @@ export default function CV() {
     <Layout>
       <Section>
         <div className="flex justify-between items-baseline">
-          <div className="flex flex-col">
+          <div className="flex flex-col flex-2">
             <Heading />
             <Introduction />
           </div>
-          <ContactDetails classes="ml-8 w-1/4" />
+          <ContactDetails classes="ml-4 flex-1" />
         </div>
       </Section>
       <Job
+        hideHrForPrint
         company="Ingresso Group Ltd"
         position="Front-End Engineer"
         duration="March 2019 – current"
@@ -26,8 +27,8 @@ export default function CV() {
         achievements={[
           "Learned and started contributing quickly even though it was a mostly unfamiliar tech-stack",
           "Reduced unaddressed technical debt by refactoring a lot of legacy AngularJS code and improving documentation",
-          "Increased test coverage for parts of application that was previously untested",
-          "Surfaced and fixed a nasty bug in the general error handling strategy that caused a lot of user facing errors to be discarded and go unnoticed",
+          "Increased test coverage for untested parts of application",
+          "Surfaced and fixed a nasty bug in the general error handling strategy that caused a lot of user facing errors go unnoticed",
         ]}
         exampleTasks={[
           "Worked out and implemented a strategy to modularise Selenium tests for easy re-use so that you can compose tests out of other tests",
@@ -36,15 +37,14 @@ export default function CV() {
           "Developed new features and robust reusable UI components in React and AngularJS",
           <>
             Designed and created mock-ups for Special Offer and other info
-            indicators for our event calendar. An example can be seen on left
-            side of the page{" "}
+            indicators for our event calendar. An example can be seen on{" "}
+            <span className="italic">left</span> side of the page{" "}
             <Link
               href="https://user-images.githubusercontent.com/13498291/57140095-dbbf5f80-6dae-11e9-970a-923e819a8eca.png"
               target="_blank"
             >
               here
-            </Link>{" "}
-            . (The right side was pre-existing).
+            </Link>
           </>,
         ]}
         tech={[
@@ -57,10 +57,10 @@ export default function CV() {
           "Selenium",
           "NodeJS",
           "Less",
-          "Google Optimize",
+          // "Google Optimize",
           "Python & Pytest",
           "Django",
-          "Bash Scripting",
+          // "Bash Scripting",
         ]}
         softSkills={[
           "Agile & scrum",
@@ -68,7 +68,7 @@ export default function CV() {
           "Feature spikes",
           "Presentations",
           "Pair programming",
-          "Assisted in interviewing",
+          "Interviewing (assisting)",
         ]}
       >
         <p>
@@ -146,12 +146,12 @@ export default function CV() {
         location="Cape Town"
         tech={["Wordpress", "Photoshop"]}
         exampleTasks={[
-          "I was part of a small web team building and maintaining Wordpress websites and converting designs to html emails.",
+          "I was part of a small web team building and maintaining Wordpress websites and converting designs to html emails",
         ]}
       />
       <Section>
-        <Education />
         <HospitalityCareer />
+        <Education />
       </Section>
     </Layout>
   );

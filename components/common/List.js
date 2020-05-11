@@ -1,5 +1,5 @@
 import { array, bool } from "prop-types";
-export default function List({ items, noWrap, styleInside }) {
+export default function List({ items, noWrap, styleInside, styleType }) {
   function getUlClasses() {
     let classes = [""];
     classes.push(styleInside ? "list-inside" : "ml-5");
@@ -7,8 +7,9 @@ export default function List({ items, noWrap, styleInside }) {
   }
 
   function getLiClasses() {
-    let classes = ["list-disc"];
+    let classes = [];
     if (noWrap) classes.push("whitespace-no-wrap");
+    classes.push(styleType ? `list-${"none"}` : "list-disc");
     return classes.join(" ");
   }
 
@@ -16,6 +17,7 @@ export default function List({ items, noWrap, styleInside }) {
     <ul className={getUlClasses()}>
       {items.map((item) => (
         <li className={getLiClasses()} key={item}>
+          {styleType === "dash" && "- "}
           {item}
         </li>
       ))}
