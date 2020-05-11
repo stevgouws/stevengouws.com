@@ -13,8 +13,24 @@ export default function Job({
   achievements,
   exampleTasks,
   tech,
-  isSimple,
 }) {
+  return (
+    <Section>
+      <Heading />
+      <div className="mb-4 flex justify-between">
+        <div className="first-child:mb-4">
+          <Achievements />
+          <Tasks />
+        </div>
+        <Tech />
+      </div>
+      <div>{children}</div>
+      <style jsx>{`
+        // break-inside: avoid;
+      `}</style>
+    </Section>
+  );
+
   function Heading() {
     return (
       <div className="mb-4">
@@ -22,7 +38,9 @@ export default function Job({
           {position} <span className="text-gray-500 font-normal">|</span>{" "}
           {company}
         </h3>
-        <div className={`flex ${Array.isArray(duration) ? "flex-col" : ""}`}>
+        <div
+          className={`flex ${Array.isArray(duration) ? "justify-between" : ""}`}
+        >
           <Icon name="location" text={location} classes="mr-2" />
           <Duration duration={duration} />
         </div>
@@ -63,27 +81,6 @@ export default function Job({
       </div>
     );
   }
-
-  return (
-    <Section>
-      <Heading />
-      <div className="mb-4 flex justify-between">
-        {isSimple ? (
-          <div>{children}</div>
-        ) : (
-          <div className="first-child:mb-4">
-            <Achievements />
-            <Tasks />
-          </div>
-        )}
-        <Tech />
-      </div>
-      {!isSimple && <div>{children}</div>}
-      <style jsx>{`
-        // break-inside: avoid;
-      `}</style>
-    </Section>
-  );
 }
 
 Job.propTypes = {

@@ -1,14 +1,21 @@
 import { array, bool } from "prop-types";
-export default function List({ items, noWrap }) {
+export default function List({ items, noWrap, styleInside }) {
+  function getUlClasses() {
+    let classes = [""];
+    classes.push(styleInside ? "list-inside" : "ml-5");
+    return classes.join("");
+  }
+
+  function getLiClasses() {
+    let classes = ["list-disc"];
+    if (noWrap) classes.push("whitespace-no-wrap");
+    return classes.join(" ");
+  }
+
   return (
-    <ul className="ml-5">
+    <ul className={getUlClasses()}>
       {items.map((item) => (
-        <li
-          className={`list-disc list-outside${
-            noWrap ? " whitespace-no-wrap" : ""
-          }`}
-          key={item}
-        >
+        <li className={getLiClasses()} key={item}>
           {item}
         </li>
       ))}
@@ -23,4 +30,5 @@ List.propTypes = {
 
 List.defaultProps = {
   noWrap: false,
+  inside: false,
 };

@@ -95,8 +95,8 @@ export default function CV() {
         company="Ebit Technologies"
         position="Software Developer"
         duration={[
-          "April 2016 – June 2017 Junior",
-          "June 2017 – February 2019 Intermediate",
+          "Apr 2016 – June 2017 Junior",
+          "June 2017 – Feb 2019 Intermediate",
         ]}
         location="Cape Town"
         achievements={[
@@ -121,7 +121,6 @@ export default function CV() {
           "SQL Server",
           "Git",
           "Linux (Ubuntu)",
-          "Wordpress",
           "Redis",
           "Docker",
           "Electron",
@@ -142,18 +141,12 @@ export default function CV() {
         location="Cape Town"
         tech={["Wordpress", "Photoshop"]}
         exampleTasks={[
-          "I was part of a small web team building and maintaining Wordpress websites and converting advertising designs to html emails.",
+          "I was part of a small web team building and maintaining Wordpress websites and converting designs to html emails.",
         ]}
-        // isSimple
-      >
-        {/* <p>
-            I was part of a small web team building and maintaining Wordpress
-            websites and converting designs to html emails.
-          </p> */}
-      </Job>
+      />
       <Section>
         <Education />
-        <PreTechCareer />
+        <HospitalityCareer />
       </Section>
     </Layout>
   );
@@ -213,42 +206,48 @@ function ContactDetails({ classes }) {
   );
 }
 
-function Education() {
+function TwoColItem({ heading, location, duration, children }) {
   return (
     <div className="mb-4 flex items-center justify-between">
       <div className="">
-        <h3 className="mb-0">Education</h3>
+        <h3 className="mb-0">{heading}</h3>
         <div className="flex flex-col">
-          <Icon name="location" text="South Africa" classes="mr-2" />
-          <Duration duration="2001 - 2004"></Duration>
+          <Icon name="location" text={location} classes="mr-2" />
+          <Duration duration={duration}></Duration>
         </div>
       </div>
-      <List
-        items={[
-          "Diploma in Computer Systems Engineering - Damelin College ",
-          "Comptia A+ and N+ certified & 6 Microsoft MCSE exams passed",
-          " Matriculated with merit and a distinction in English ",
-        ]}
-      />
+      <div className="w-9/12">{children}</div>
     </div>
   );
 }
 
-function PreTechCareer() {
+function Education() {
   return (
-    <div className="mb-4 flex items-center justify-between">
-      <div className="">
-        <h3 className="mb-0">Hospitality Career</h3>
-        <div className="flex flex-col">
-          <Icon name="location" text="London" classes="mr-2" />
-          <Duration duration="2004 - 2015"></Duration>
-        </div>
-      </div>
-      <div>
-        I started as a security guard with no experience and progressed to
-        Senior Guest Service Manager where I directly managed a team of 11 Guest
-        Service Managers at a 300 bedroom, 4-star hotel in central London.
-      </div>
-    </div>
+    <TwoColItem
+      heading="Education"
+      location="South Africa"
+      duration="2001 - 2004"
+    >
+      <List
+        styleInside
+        items={[
+          "Diploma in Computer Systems Engineering - Damelin College ",
+          "Comptia A+ and N+ certified",
+          "Passed 6 International Microsoft MCSE exams",
+          " Matriculated with merit and a distinction in English ",
+        ]}
+      />
+    </TwoColItem>
+  );
+}
+
+function HospitalityCareer() {
+  return (
+    <TwoColItem heading="Hospitality" location="London" duration="2004 - 2015">
+      Prior to tech I worked the hospitality industry, starting as a security
+      guard with zero experience. I worked my way up to Senior Guest Service
+      Manager where I directly managed a team of 11 Guest Service Managers at a
+      300 bedroom, 4-star hotel in central London.
+    </TwoColItem>
   );
 }
