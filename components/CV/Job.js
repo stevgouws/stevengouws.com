@@ -13,6 +13,7 @@ export default function Job({
   achievements,
   exampleTasks,
   tech,
+  softSkills,
 }) {
   return (
     <Section>
@@ -22,7 +23,15 @@ export default function Job({
           <Achievements />
           <Tasks />
         </div>
-        <Tech />
+        <div className="ml-4 w-1/3">
+          <Tech />
+          <SoftSkills />
+          {/* <style jsx>{`
+            .tech {
+              flex-basis: 166px;
+            }
+          `}</style> */}
+        </div>
       </div>
       <div>{children}</div>
       <style jsx>{`
@@ -68,18 +77,23 @@ export default function Job({
     );
   }
 
-  function Tech() {
+  function RightColItem({ heading, items, noWrap }) {
+    if (!items.length) return null;
     return (
-      <div className="tech ml-4 flex-shrink-0">
-        <h4 className="mb-0">Tech</h4>
-        <List items={tech} noWrap />
-        <style jsx>{`
-          .tech {
-            flex-basis: 166px;
-          }
-        `}</style>
+      // SG_TODO:  remove shrink?
+      <div className="flex-shrink-0 first:mb-4">
+        <h4 className="mb-0">{heading}</h4>
+        <List items={items} noWrap={noWrap} />
       </div>
     );
+  }
+
+  function Tech() {
+    return <RightColItem heading="Tech" items={tech} noWrap />;
+  }
+
+  function SoftSkills() {
+    return <RightColItem heading="Soft Skills" items={softSkills} />;
   }
 }
 
@@ -91,12 +105,12 @@ Job.propTypes = {
   achievements: array,
   exampleTasks: array,
   tech: array,
-  isSimple: bool,
+  softSkills: array,
 };
 
 Job.defaultProps = {
   achievements: [],
   exampleTasks: [],
   tech: [],
-  isSimple: false,
+  softSkills: [],
 };

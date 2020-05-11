@@ -15,7 +15,7 @@ export default function CV() {
             <Heading />
             <Introduction />
           </div>
-          <ContactDetails classes="ml-8" />
+          <ContactDetails classes="ml-8 w-1/4" />
         </div>
       </Section>
       <Job
@@ -46,8 +46,6 @@ export default function CV() {
             </Link>{" "}
             . (The right side was pre-existing).
           </>,
-          "Assisted in conducting interviews for Front-End engineers",
-          "I also did code reviews, feature spikes, pair programming and some technical presentations",
         ]}
         tech={[
           "React & Redux",
@@ -59,11 +57,18 @@ export default function CV() {
           "Selenium",
           "NodeJS",
           "Less",
-          "Google Optimise",
+          "Google Optimize",
           "Python & Pytest",
           "Django",
           "Bash Scripting",
-          "Agile methodology",
+        ]}
+        softSkills={[
+          "Agile & scrum",
+          "Code reviews",
+          "Feature spikes",
+          "Presentations",
+          "Pair programming",
+          "Assisted in interviewing",
         ]}
       >
         <p>
@@ -188,18 +193,13 @@ function ContactDetails({ classes }) {
       <div>West Kensington</div>
       <div>London</div>
       <div className="mb-4">W14 8AP</div>
-      <Link displayBlock href="tel:+447780743335" icon="phone">
+      <Link displayBlock href="tel:+447780743335">
         07780743335
       </Link>
-      <Link displayBlock href="mailto:steven@stevengouws.com" icon="email">
+      <Link displayBlock href="mailto:steven@stevengouws.com">
         steven@stevengouws.com
       </Link>
-      <Link
-        displayBlock
-        href="https://github.com/stevgouws"
-        icon="globe"
-        target="_blank"
-      >
+      <Link displayBlock href="https://github.com/stevgouws" target="_blank">
         github.com/stevgouws
       </Link>
     </div>
