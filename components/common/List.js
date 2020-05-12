@@ -1,9 +1,19 @@
-import { array, bool } from "prop-types";
-export default function List({ items, noWrap, styleInside, styleType }) {
-  function getUlClasses() {
+import { array, bool, number, oneOfType, string } from "prop-types";
+export default function List({
+  items,
+  noWrap,
+  styleInside,
+  styleType,
+  columns,
+  flexRatios,
+}) {
+  if (items && !columns.length) columns = [items];
+
+  function getUlClasses({ index }) {
     let classes = [""];
-    classes.push(styleInside ? "list-inside" : "ml-5");
-    return classes.join("");
+    classes.push(styleInside ? "list-inside" : "pl-5");
+    if (flexRatios.length > 1) classes.push(`flex-${flexRatios[index]}`);
+    return classes.join(" ");
   }
 
   function getLiClasses() {
@@ -13,24 +23,28 @@ export default function List({ items, noWrap, styleInside, styleType }) {
     return classes.join(" ");
   }
 
-  return (
-    <ul className={getUlClasses()}>
-      {items.map((item) => (
+  return columns.map((column, index) => (
+    <ul key={column} className={getUlClasses({ index })}>
+      {column.map((item) => (
         <li className={getLiClasses()} key={item}>
           {styleType === "dash" && "- "}
           {item}
         </li>
       ))}
     </ul>
-  );
+  ));
 }
 
 List.propTypes = {
-  items: array.isRequired,
+  items: array,
   noWrap: bool,
+  columns: oneOfType([string.isRequired, array.isRequired]),
+  flexRatios: array,
 };
 
 List.defaultProps = {
   noWrap: false,
   inside: false,
+  columns: [],
+  flexRatios: [],
 };
