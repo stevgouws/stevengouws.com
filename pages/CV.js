@@ -259,7 +259,7 @@ function HospitalityCareer() {
       Before tech, I worked in the hospitality industry, starting as a security
       guard with zero experience. I worked my way up to Senior Guest Service
       Manager and directly managed a team of 11 Guest Service Managers at a 300
-      bedroom, 4-star hotel in central London.
+      bedroom, 4-star hotel in Central London.
     </TwoColItem>
   );
 }
@@ -273,7 +273,7 @@ function Hobbies() {
           columns={[
             ["Reading", "Going to the gym"],
             [
-              'Answering "whyyy?" 10 million times a day for my 2-year-old daughter Zoe',
+              'Answering "Whyyy?" 10 million times a day for my 2-year-old daughter Zoe',
             ],
           ]}
           flexRatios={[1, 2]}
