@@ -5,6 +5,7 @@ import List from "../components/common/List";
 import Icon from "../components/common/Icon";
 import Job from "../components/CV/Job";
 import Duration from "../components/CV/Duration";
+import { any, string, array } from "prop-types";
 
 export default function CV() {
   return (
@@ -138,7 +139,7 @@ export default function CV() {
           "Docker",
           "Electron",
           "Nginx",
-          "Websockets",
+          "Web Sockets",
         ]}
       >
         <p>
@@ -216,6 +217,14 @@ function ContactDetails({ classes }) {
   );
 }
 
+ContactDetails.propTypes = {
+  classes: array,
+};
+
+ContactDetails.defaultProps = {
+  classes: [],
+};
+
 function TwoColItem({ heading, location, duration, children }) {
   return (
     <div className="mb-4 flex items-center justify-between">
@@ -232,6 +241,20 @@ function TwoColItem({ heading, location, duration, children }) {
     </div>
   );
 }
+
+TwoColItem.propTypes = {
+  children: any,
+  duration: string,
+  heading: string,
+  location: string,
+};
+
+TwoColItem.defaultProps = {
+  children: null,
+  duration: "",
+  heading: "",
+  location: "",
+};
 
 function Education() {
   return (

@@ -1,5 +1,5 @@
 import Head from "next/head";
-
+import { any } from "prop-types";
 export default function Layout({ children }) {
   return (
     <>
@@ -15,3 +15,7 @@ export default function Layout({ children }) {
     </>
   );
 }
+
+Layout.propTypes = {
+  children: any,
+};

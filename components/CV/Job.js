@@ -1,4 +1,4 @@
-import { string, array, oneOfType, bool } from "prop-types";
+import { string, array, oneOfType, bool, any } from "prop-types";
 import Icon from "../common/Icon";
 import List from "../common/List";
 import Section from "../common/Section";
@@ -101,15 +101,16 @@ export default function Job({
 }
 
 Job.propTypes = {
-  hideHrForPrint: bool,
-  company: string.isRequired,
-  position: string.isRequired,
-  duration: oneOfType([string.isRequired, array.isRequired]),
-  location: string.isRequired,
   achievements: array,
+  children: any,
+  company: string.isRequired,
+  duration: string.isRequired,
   exampleTasks: array,
-  tech: array,
+  hideHrForPrint: bool,
+  location: any,
+  position: any,
   softSkills: array,
+  tech: array,
 };
 
 Job.defaultProps = {

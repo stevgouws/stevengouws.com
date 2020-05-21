@@ -137,10 +137,6 @@ module.exports = {
         900: "#702459",
         highlight: "#f34da0",
       },
-      blueGray: {
-        500: "#739dab",
-        600: "#6392a1",
-      },
     },
     spacing: {
       px: "1px",
