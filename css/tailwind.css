@@ -12,7 +12,6 @@ body {
 
 h1 {
   @apply text-4xl;
-  @apply font-medium;
 }
 
 h2 {

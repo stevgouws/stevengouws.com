@@ -171,7 +171,7 @@ export default function CV() {
 function Heading() {
   return (
     <div className="flex items-baseline">
-      <h1>Steven Gouws</h1>
+      <h2>Steven Gouws</h2>
       <span className="ml-2">Javascript Developer</span>
     </div>
   );
