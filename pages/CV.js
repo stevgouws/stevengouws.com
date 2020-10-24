@@ -29,10 +29,10 @@ export default function CV() {
           "Learned and started contributing quickly even though it was a mostly unfamiliar tech-stack",
           "Reduced unaddressed technical debt by refactoring a lot of legacy AngularJS code and improving documentation",
           "Increased test coverage for untested parts of the application",
-          "Surfaced and fixed a nasty bug in the general error handling strategy that caused a lot of user-facing errors go unnoticed",
+          "Surfaced and fixed a nasty bug in the general error handling strategy that caused a lot of user-facing errors to go unnoticed",
         ]}
         exampleTasks={[
-          "Worked out and implemented a strategy to modularise Selenium tests for easy re-use so that you can compose tests out of other tests",
+          "Worked out and implemented a strategy to modularise Selenium tests for easy re-use so that you can compose tests bundles out of existing tests",
           "Implemented Stripe Card integration to support SCA-2 ",
           "Implemented dynamic pricing for ticket insurance depending on total ticket prices",
           "Developed new features and robust UI components in React and AngularJS",
@@ -64,7 +64,7 @@ export default function CV() {
           // "Bash Scripting",
         ]}
         softSkills={[
-          "Agile & scrum",
+          "Agile",
           "Code reviews",
           "Feature spikes",
           "Presentations",
