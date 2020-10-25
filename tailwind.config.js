@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ["./components/**/*.js"],
+  // purge: ["./components/**/*.js"],
   prefix: "",
   important: false,
   separator: ":",
