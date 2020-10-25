@@ -5,7 +5,7 @@ import List from "../components/common/List";
 import Icon from "../components/common/Icon";
 import Job from "../components/CV/Job";
 import Duration from "../components/CV/Duration";
-import { any, string, array } from "prop-types";
+import { any, string } from "prop-types";
 
 export default function CV() {
   return (
