@@ -16,7 +16,7 @@ export default function Home() {
             Javascript Developer
           </span>
           <span className="text-2xl lg:text-base lg:ml-2">
-            <Link href="cv">CV</Link>
+            <Link href="CV">CV</Link>
           </span>
         </div>
       </main>
