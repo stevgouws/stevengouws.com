@@ -11,12 +11,12 @@ export default function CV() {
   return (
     <Layout>
       <Section>
-        <div className="flex justify-between items-baseline">
+        <div className="flex-col flex justify-between items-baseline lg:flex-row">
           <div className="flex flex-col flex-2">
             <Heading />
             <Introduction />
           </div>
-          <ContactDetails classes="ml-4 flex-1" />
+          <ContactDetails classes="mt-4 lg:ml-4 lg:flex-1 lg:mt-0" />
         </div>
       </Section>
       <Job
@@ -170,9 +170,9 @@ export default function CV() {
 
 function Heading() {
   return (
-    <div className="flex items-baseline">
-      <h2>Steven Gouws</h2>
-      <span className="ml-2">Javascript Developer</span>
+    <div className="mb-4 items-baseline lg:flex lg:mb-0">
+      <h2 className="mb-0 lg:mb-4">Steven Gouws</h2>
+      <span className="text-xl lg:text-base lg:ml-2">Javascript Developer</span>
     </div>
   );
 }
@@ -200,6 +200,7 @@ function Introduction() {
 function ContactDetails({ classes }) {
   return (
     <div className={classes}>
+      <h3 className="lg:hidden">Contact Details</h3>
       <div>21 Upper Addison Gardens</div>
       <div>West Kensington</div>
       <div>London</div>
@@ -218,7 +219,7 @@ function ContactDetails({ classes }) {
 }
 
 ContactDetails.propTypes = {
-  classes: array,
+  classes: string,
 };
 
 ContactDetails.defaultProps = {
@@ -227,17 +228,17 @@ ContactDetails.defaultProps = {
 
 function TwoColItem({ heading, location, duration, children }) {
   return (
-    <div className="mb-4 flex items-center justify-between">
+    <div className="mb-4 flex lg:items-center lg:justify-between flex-col lg:flex-row">
       <div>
-        <h3 className="mb-0">{heading}</h3>
+        <h3 className="lg:mb-0">{heading}</h3>
         {(location || duration) && (
-          <div className="flex flex-col">
+          <div className="flex flex-col mb-4 lg:mb-0">
             <Icon name="location" text={location} classes="mr-2" />
             <Duration duration={duration}></Duration>
           </div>
         )}
       </div>
-      <div className="w-9/12">{children}</div>
+      <div className="lg:w-9/12">{children}</div>
     </div>
   );
 }
@@ -264,7 +265,6 @@ function Education() {
       duration="2001 - 2004"
     >
       <List
-        styleInside
         items={[
           "Diploma in Computer Systems Engineering - Damelin College ",
           "CompTIA A+ and N+ certified",
@@ -289,9 +289,9 @@ function HospitalityCareer() {
 
 function Hobbies() {
   return (
-    <div className="hobbies mb-4 flex items-center justify-between">
-      <h3 className="mb-0">Hobbies</h3>
-      <div className="w-9/12 flex">
+    <div className="hobbies mb-4 lg:flex lg:items-center lg:justify-between">
+      <h3 className="lg:mb-0">Hobbies</h3>
+      <div className="lg:w-9/12 lg:flex">
         <List
           columns={[
             ["Reading", "Going to the gym"],

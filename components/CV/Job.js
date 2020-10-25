@@ -19,12 +19,12 @@ export default function Job({
   return (
     <Section hideHrForPrint={hideHrForPrint}>
       <Heading />
-      <div className="mb-4 flex justify-between">
+      <div className="mb-4 flex justify-between flex-col lg:flex-row">
         <div className="flex-1">
           <Achievements />
           <Tasks />
         </div>
-        <div className="ml-4 w-1/4">
+        <div className="lg:w-1/4 flex mt-4 lg:block lg:mt-0 lg:ml-4">
           <Tech />
           <SoftSkills />
           {/* <style jsx>{`
@@ -44,12 +44,17 @@ export default function Job({
   function Heading() {
     return (
       <div className="mb-4">
-        <h3 className="mb-0">
-          {position} <span className="text-gray-500 font-normal">|</span>{" "}
-          {company}
+        <h3 className="lg:mb-0">
+          {position}
+          <span className="text-gray-500 font-normal">
+            <span className="hidden lg:inline"> |</span>
+          </span>{" "}
+          <span className="block lg:inline">{company}</span>
         </h3>
         <div
-          className={`flex ${Array.isArray(duration) ? "justify-between" : ""}`}
+          className={`flex-col flex lg:flex-row ${
+            Array.isArray(duration) ? "justify-between" : ""
+          }`}
         >
           <Icon name="location" text={location} classes="mr-2" />
           <Duration duration={duration} />
@@ -95,7 +100,11 @@ export default function Job({
 
   function SoftSkills() {
     return (
-      <RightColItem heading="Soft Skills" items={softSkills} classes="mt-4" />
+      <RightColItem
+        heading="Soft Skills"
+        items={softSkills}
+        classes="ml-4 lg:mt-4 lg:ml-0"
+      />
     );
   }
 }
@@ -104,7 +113,7 @@ Job.propTypes = {
   achievements: array,
   children: any,
   company: string.isRequired,
-  duration: string.isRequired,
+  duration: oneOfType([string.isRequired, array.isRequired]),
   exampleTasks: array,
   hideHrForPrint: bool,
   location: any,
