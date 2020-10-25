@@ -19,12 +19,12 @@ export default function Job({
   return (
     <Section hideHrForPrint={hideHrForPrint}>
       <Heading />
-      <div className="mb-4 flex justify-between flex-col lg:flex-row">
+      <div className="mb-4 flex justify-between flex-col lg:flex-row print:flex-row">
         <div className="flex-1">
           <Achievements />
           <Tasks />
         </div>
-        <div className="lg:w-1/4 flex mt-4 lg:block lg:mt-0 lg:ml-4">
+        <div className="flex mt-4 lg:w-1/4 lg:block lg:mt-0 lg:ml-4 print:w-1/4 print:block print:mt-0 print:ml-4">
           <Tech />
           <SoftSkills />
           {/* <style jsx>{`
@@ -44,15 +44,15 @@ export default function Job({
   function Heading() {
     return (
       <div className="mb-4">
-        <h3 className="lg:mb-0">
+        <h3 className="lg:mb-0 print:mb-0">
           {position}
           <span className="text-gray-500 font-normal">
             <span className="hidden lg:inline"> |</span>
           </span>{" "}
-          <span className="block lg:inline">{company}</span>
+          <span className="block lg:inline print:inline">{company}</span>
         </h3>
         <div
-          className={`flex-col flex lg:flex-row ${
+          className={`flex-col flex lg:flex-row print:flex-row ${
             Array.isArray(duration) ? "justify-between" : ""
           }`}
         >
@@ -103,7 +103,7 @@ export default function Job({
       <RightColItem
         heading="Soft Skills"
         items={softSkills}
-        classes="ml-4 lg:mt-4 lg:ml-0"
+        classes="ml-4 lg:mt-4 print:mt-4 lg:ml-0 print:ml-0"
       />
     );
   }

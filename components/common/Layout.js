@@ -9,7 +9,7 @@ export default function Layout({ children }) {
           rel="stylesheet"
         />
       </Head>
-      <main className="container mx-auto my-4 lg:max-w-screen-A4 mx-w-xl px-6">
+      <main className="container mx-auto my-4 lg:max-w-screen-A4 print:max-w-screen-A4 mx-w-xl px-6">
         {children}
       </main>
     </>

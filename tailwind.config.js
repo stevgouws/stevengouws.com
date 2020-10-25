@@ -19,6 +19,7 @@ module.exports = {
       lg: "1024px",
       xl: "1280px",
       A4: "720px",
+      print: { raw: "print" },
     },
     colors: {
       transparent: "transparent",

@@ -10,12 +10,12 @@ export default function Home() {
       </Head>
 
       <main>
-        <div className="flex items-baseline flex-col lg:flex-row">
+        <div className="flex items-baseline flex-col lg:flex-row print:flex-row">
           <h1 className="mb-0">Steven Gouws</h1>
-          <span className="text-2xl lg:text-base lg:ml-2">
+          <span className="text-2xl lg:text-base lg:ml-2 print:text-base print:ml-2">
             Javascript Developer
           </span>
-          <span className="text-2xl lg:text-base lg:ml-2">
+          <span className="text-2xl lg:text-base lg:ml-2 print:text-base print:ml-2">
             <Link href="CV">CV</Link>
           </span>
         </div>

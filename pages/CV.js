@@ -11,12 +11,12 @@ export default function CV() {
   return (
     <Layout>
       <Section>
-        <div className="flex-col flex justify-between items-baseline lg:flex-row">
+        <div className="flex-col flex justify-between items-baseline lg:flex-row print:flex-row">
           <div className="flex flex-col flex-2">
             <Heading />
             <Introduction />
           </div>
-          <ContactDetails classes="mt-4 lg:ml-4 lg:flex-1 lg:mt-0" />
+          <ContactDetails classes="mt-4 lg:ml-4 lg:flex-1 lg:mt-0 print:ml-4 print:flex-1 print:mt-0" />
         </div>
       </Section>
       <Job
@@ -170,9 +170,11 @@ export default function CV() {
 
 function Heading() {
   return (
-    <div className="mb-4 items-baseline lg:flex lg:mb-0">
-      <h2 className="mb-0 lg:mb-4">Steven Gouws</h2>
-      <span className="text-xl lg:text-base lg:ml-2">Javascript Developer</span>
+    <div className="mb-4 items-baseline lg:flex lg:mb-0 print:flex print:mb-0">
+      <h2 className="mb-0 lg:mb-4 print:mb-4">Steven Gouws</h2>
+      <span className="text-xl lg:text-base lg:ml-2 print:text-base print:ml-2">
+        Javascript Developer
+      </span>
     </div>
   );
 }
@@ -200,7 +202,7 @@ function Introduction() {
 function ContactDetails({ classes }) {
   return (
     <div className={classes}>
-      <h3 className="lg:hidden">Contact Details</h3>
+      <h3 className="lg:hidden print:hidden">Contact Details</h3>
       <div>21 Upper Addison Gardens</div>
       <div>West Kensington</div>
       <div>London</div>
@@ -228,17 +230,17 @@ ContactDetails.defaultProps = {
 
 function TwoColItem({ heading, location, duration, children }) {
   return (
-    <div className="mb-4 flex lg:items-center lg:justify-between flex-col lg:flex-row">
+    <div className="mb-4 flex flex-col lg:items-center lg:justify-between lg:flex-row print:items-center print:justify-between print:flex-row">
       <div>
-        <h3 className="lg:mb-0">{heading}</h3>
+        <h3 className="lg:mb-0 print:mb-0">{heading}</h3>
         {(location || duration) && (
-          <div className="flex flex-col mb-4 lg:mb-0">
+          <div className="flex flex-col mb-4 lg:mb-0 print:mb-0">
             <Icon name="location" text={location} classes="mr-2" />
             <Duration duration={duration}></Duration>
           </div>
         )}
       </div>
-      <div className="lg:w-9/12">{children}</div>
+      <div className="lg:w-9/12 print:w-9/12">{children}</div>
     </div>
   );
 }
@@ -289,9 +291,9 @@ function HospitalityCareer() {
 
 function Hobbies() {
   return (
-    <div className="hobbies mb-4 lg:flex lg:items-center lg:justify-between">
-      <h3 className="lg:mb-0">Hobbies</h3>
-      <div className="lg:w-9/12 lg:flex">
+    <div className="hobbies mb-4 lg:flex lg:items-center lg:justify-between print:flex print:items-center print:justify-between">
+      <h3 className="lg:mb-0 print:mb-0">Hobbies</h3>
+      <div className="lg:w-9/12 lg:flex print:w-9/12 print:flex">
         <List
           columns={[
             ["Reading", "Going to the gym"],
