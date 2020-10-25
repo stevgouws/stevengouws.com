@@ -83,7 +83,7 @@ export default function Job({
     );
   }
 
-  function RightColItem({ heading, items, noWrap, classes }) {
+  function RightColItem({ heading, items, noWrap, classes = "" }) {
     if (!items.length) return null;
     return (
       // SG_TODO:  remove shrink?
