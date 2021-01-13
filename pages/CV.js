@@ -298,7 +298,7 @@ function Hobbies() {
           columns={[
             ["Reading", "Going to the gym"],
             [
-              'Answering "Whyyy?" 10 million times a day for my 2-year-old daughter Zoe',
+              'Answering "Whyyy?" 10 million times a day for my 3-year-old daughter Zoe',
             ],
           ]}
           flexRatios={[1, 2]}
