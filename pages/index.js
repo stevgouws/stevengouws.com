@@ -1,14 +1,8 @@
-import Head from "next/head";
 import Link from "../components/common/Link";
 
 export default function Home() {
   return (
     <div className="container">
-      <Head>
-        <title>Steven Gouws - Javascript Developer</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main>
         <div className="flex items-baseline flex-col lg:flex-row print:flex-row">
           <h1 className="mb-0">Steven Gouws</h1>
