@@ -21,6 +21,107 @@ export default function CV() {
       </Section>
       <Job
         hideHrForPrint
+        company="Fika Community Ltd"
+        position="Senior Software Engineer"
+        duration={[
+          "May 2021 – Aug 2022 - Senior",
+          "Aug 2022 – Current - Intermediate",
+        ]}
+        location="Fully remote, based in London"
+        achievements={[
+          "Promoted to Senior Software Engineer after just over a year",
+          "Lead on several features and took ownership of deploys and releases",
+          "Introduced and became the go-to source of knowledge for Playwright E2E testing across the engineering team",
+          "Continuously reduced technical debt by refactoring and retiring various legacy features",
+          "De-flaked lots of long running flaky E2E and integration tests, some due to subtle race conditions",
+        ]}
+        exampleTasks={[
+          <>
+            Did a spike for implementing enterprise SSO and documented findings
+            -{" "}
+            <Link
+              href="https://drive.google.com/file/d/11Wz9w-vXjOY-PlyNXQQ9HuLU5t3fsb76/view?usp=sharing"
+              target="_blank"
+            >
+              SSO Spike.pdf
+            </Link>
+          </>,
+          "Specced out the db architecture for adding the concept of teams and team-stats for our users",
+          "Converted our backend from Common JS to ESM to remove build step and speed up the testing feedback-loop",
+          "Wrote various scripts to compile data to spreadsheets",
+          <>
+            Built charts using VictoryCharts:
+            <br />{" "}
+            <Link
+              href="https://drive.google.com/file/d/1cgIUo-5rBYPXlN1kyjkI4OFAi1-oZB4P/view?usp=sharing"
+              target="_blank"
+            >
+              Mental Fitness quiz results chart
+            </Link>
+            {" • "}
+            <Link
+              href="https://drive.google.com/file/d/1SE78Rkx5MmD7H2dw-z2ZVMaTA0SI31Hg/view?usp=sharing"
+              target="_blank"
+            >
+              Engagement over time chart
+            </Link>
+          </>,
+          "Developed new features and robust UI components in React and React Native",
+          "Aligned with the design team to ensure we have consistency between our design system and component library in Figma and in code",
+          "Wrote NodeJS apis, implemented pubsub events and scheduled jobs with Firebase & GCP",
+          "Wrote Firestore data migrations",
+          "Implemented push-notifications using React Native and Firebase Messaging",
+          "Set up consistent linting and code formatting across all our projects",
+        ]}
+        tech={[
+          "React & Redux",
+          "NextJS",
+          "React Native",
+          "NodeJS",
+          "Firebase",
+          "GCP",
+          "Playwright",
+          "Appium",
+          "Detox",
+          "Elasticsearch",
+          "MUI",
+          "Travis CI",
+          "Contentful",
+        ]}
+        softSkills={[
+          "Line management & mentoring",
+          "Agile",
+          "Code reviews",
+          "Feature spikes",
+          "Presentations",
+          "Pair programming",
+          "Interviewing",
+        ]}
+      >
+        <p>
+          I work across the stack on our NextJS{" "}
+          <Link href="https://app.fika.community/welcome/" target="_blank">
+            Web App
+          </Link>{" "}
+          and React Native based{" "}
+          <Link
+            href="https://apps.apple.com/gb/app/fika/id1465248342"
+            target="_blank"
+          >
+            iOS
+          </Link>{" "}
+          &{" "}
+          <Link
+            href="https://play.google.com/store/apps/details?id=community.fika.app.prod&hl=en_GB&gl=US"
+            target="_blank"
+          >
+            Android
+          </Link>{" "}
+          apps with a Firebase backend.
+        </p>
+      </Job>
+      <Job
+        hideHrForPrint
         company="Ingresso Group Ltd"
         position="Front-End Engineer"
         duration="March 2019 – current"
@@ -73,27 +174,28 @@ export default function CV() {
         ]}
       >
         <p>
-          I work mainly on the Front-End of our White-label product for selling
-          event and theatre tickets. We run the White-label under our own{" "}
+          I worked mainly on the Front-End of our White-label product for
+          selling event and theatre tickets. We ran the White-label under our
+          own{" "}
           <Link
             href="https://www.fromtheboxoffice.com/category/162-theatre/"
             target="_blank"
           >
             From The Box Office
           </Link>{" "}
-          brand where we sell directly to an average of about 500,000 unique
+          brand where we sold directly to an average of about 500,000 unique
           monthly visitors.
         </p>
         <p>
-          We also have clients who use our product (or parts thereof) under
+          We also had clients who used our product (or parts thereof) under
           their brands. For example,{" "}
           <Link
-            href="https://theatre.ticketmaster.co.uk/book/17ZC6-sister-act-the-musical/"
+            href="https://theatre.ticketmaster.co.uk/book/1F1W0-tina-the-tina-turner-musical/"
             target="_blank"
           >
             Ticketmaster
           </Link>{" "}
-          who uses our Booking App and Checkout for theatre shows.
+          who used our Booking App and Checkout for theatre shows.
         </p>
         <p></p>
       </Job>
@@ -183,17 +285,19 @@ function Introduction() {
   return (
     <div>
       <p>
-        I’m friendly, very self-sufficient and always keen to learn and grow my
-        skills. I would love to work for an organisation that supports and
-        encourages this. <br />
+        I'm a friendly, self-sufficient Software Engineer with 8 years
+        commercial experience in shipping code to users and working in
+        cross-functional teams.
+        <br />
       </p>
       <p>
-        I get a kick out of it every single time I learn a shorter, cleaner,
-        faster or more maintainable way to code something and I use{" "}
-        <Link href="https://sivers.org/srs" target="_blank">
+        I'm always keen to learn and grow my skills. I get a kick out of it
+        every single time I learn a shorter, cleaner, faster or more
+        maintainable way to code something and I use{" "}
+        <Link href="https://ncase.me/remember/" target="_blank">
           spaced repetition learning
         </Link>{" "}
-        daily to help cement new things I learn.
+        daily to help cement new concepts.
       </p>
     </div>
   );
