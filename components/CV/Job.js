@@ -6,7 +6,6 @@ import Duration from "../CV/Duration";
 
 export default function Job({
   children,
-  hideHrForPrint,
   company,
   position,
   duration,
@@ -17,8 +16,12 @@ export default function Job({
   softSkills,
 }) {
   return (
-    <Section hideHrForPrint={hideHrForPrint}>
+    <Section>
       <Heading />
+      <div>
+        {children}
+        <p></p>
+      </div>
       <div className="mb-4 flex justify-between flex-col lg:flex-row print:flex-row">
         <div className="flex-1">
           <Achievements />
@@ -27,29 +30,22 @@ export default function Job({
         <div className="flex mt-4 lg:w-1/4 lg:block lg:mt-0 lg:ml-4 print:w-1/4 print:block print:mt-0 print:ml-4">
           <Tech />
           <SoftSkills />
-          {/* <style jsx>{`
-            .tech {
-              flex-basis: 166px;
-            }
-          `}</style> */}
         </div>
       </div>
-      <div>{children}</div>
-      <style jsx>{`
-        // break-inside: avoid;
-      `}</style>
     </Section>
   );
 
   function Heading() {
     return (
-      <div className="mb-4">
+      <div className="my-4">
         <h3>
           {position}
           <span className="text-gray-500 font-normal">
-            <span className="hidden lg:inline"> |</span>
+            <span className="hidden lg:inline print:inline"> |</span>
           </span>{" "}
-          <span className="block lg:inline print:inline">{company}</span>
+          <span className="block lg:inline print:inline sm:text-lg lg:text-2xl print:text-2xl">
+            {company}
+          </span>
         </h3>
         <div
           className={`flex-col flex lg:flex-row print:flex-row ${
@@ -86,9 +82,8 @@ export default function Job({
   function RightColItem({ heading, items, noWrap, classes = "" }) {
     if (!items.length) return null;
     return (
-      // SG_TODO:  remove shrink?
-      <div className={`flex-shrink-0 ${classes}`.trim()}>
-        <h4 className="mb-0">{heading}</h4>
+      <div className={classes}>
+        <h4>{heading}</h4>
         <List items={items} noWrap={noWrap} styleType="dash" styleInside />
       </div>
     );
@@ -115,7 +110,6 @@ Job.propTypes = {
   company: string.isRequired,
   duration: oneOfType([string.isRequired, array.isRequired]),
   exampleTasks: array,
-  hideHrForPrint: bool,
   location: any,
   position: any,
   softSkills: array,
@@ -123,7 +117,6 @@ Job.propTypes = {
 };
 
 Job.defaultProps = {
-  hideHrForPrint: false,
   achievements: [],
   exampleTasks: [],
   tech: [],

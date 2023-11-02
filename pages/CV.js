@@ -20,13 +20,9 @@ export default function CV() {
         </div>
       </Section>
       <Job
-        hideHrForPrint
         company="Fika Community Ltd"
         position="Senior Software Engineer"
-        duration={[
-          "May 2021 – Aug 2022 - Senior",
-          "Aug 2022 – Current - Intermediate",
-        ]}
+        duration={"May 2021 – Current"}
         location="Fully remote, based in London"
         achievements={[
           "Promoted to Senior Software Engineer after a year",
@@ -38,7 +34,7 @@ export default function CV() {
         exampleTasks={[
           <>
             Did a spike for implementing enterprise SSO and documented findings
-            -{" "}
+            - see{" "}
             <Link
               href="https://drive.google.com/file/d/11Wz9w-vXjOY-PlyNXQQ9HuLU5t3fsb76/view?usp=sharing"
               target="_blank"
@@ -50,21 +46,26 @@ export default function CV() {
           "Converted our backend from Common JS to ESM to remove build step and speed up the testing feedback-loop",
           "Wrote various scripts to compile data to spreadsheets",
           <>
-            Built charts using VictoryCharts:
+            Built data charts using VictoryCharts
             <br />{" "}
-            <Link
-              href="https://drive.google.com/file/d/1cgIUo-5rBYPXlN1kyjkI4OFAi1-oZB4P/view?usp=sharing"
-              target="_blank"
-            >
-              Mental Fitness quiz results chart
-            </Link>
-            {" • "}
-            <Link
-              href="https://drive.google.com/file/d/1SE78Rkx5MmD7H2dw-z2ZVMaTA0SI31Hg/view?usp=sharing"
-              target="_blank"
-            >
-              Engagement over time chart
-            </Link>
+            <List
+              items={[
+                <Link
+                  href="https://drive.google.com/file/d/1cgIUo-5rBYPXlN1kyjkI4OFAi1-oZB4P/view?usp=sharing"
+                  target="_blank"
+                  key="mfq"
+                >
+                  Mental Fitness quiz results chart
+                </Link>,
+                <Link
+                  href="https://drive.google.com/file/d/1SE78Rkx5MmD7H2dw-z2ZVMaTA0SI31Hg/view?usp=sharing"
+                  target="_blank"
+                  key="engagement"
+                >
+                  Engagement over time chart
+                </Link>,
+              ]}
+            />
           </>,
           "Developed new features and robust UI components in React and React Native",
           "Aligned with the design team to ensure we have consistency between our design system and component library in Figma and in code",
@@ -99,11 +100,13 @@ export default function CV() {
         ]}
       >
         <p>
-          I work across the stack on our NextJS{" "}
+          At Fika we're trying to teach skills to avoid burnout and to bring
+          Mental Fitness to the world. I work across the stack using JavaScript
+          in our NextJS{" "}
           <Link href="https://app.fika.community/welcome/" target="_blank">
             Web App
-          </Link>{" "}
-          and React Native based{" "}
+          </Link>
+          , React Native based{" "}
           <Link
             href="https://apps.apple.com/gb/app/fika/id1465248342"
             target="_blank"
@@ -117,14 +120,13 @@ export default function CV() {
           >
             Android
           </Link>{" "}
-          apps with a Firebase backend.
+          apps and NodeJS based Firebase backend.
         </p>
       </Job>
       <Job
-        hideHrForPrint
         company="Ingresso Group Ltd"
         position="Front-End Engineer"
-        duration="March 2019 – current"
+        duration="March 2019 – May 2021"
         location="London"
         achievements={[
           "Learned and started contributing quickly even though it was a mostly unfamiliar tech-stack",
@@ -159,18 +161,8 @@ export default function CV() {
           "Selenium",
           "NodeJS",
           "Less",
-          // "Google Optimize",
           "Python & Pytest",
           "Django",
-          // "Bash Scripting",
-        ]}
-        softSkills={[
-          "Agile",
-          "Code reviews",
-          "Feature spikes",
-          "Presentations",
-          "Pair programming",
-          "Interviewing (assisting)",
         ]}
       >
         <p>
@@ -197,15 +189,11 @@ export default function CV() {
           </Link>{" "}
           who used our Booking App and Checkout for theatre shows.
         </p>
-        <p></p>
       </Job>
       <Job
         company="Ebit Technologies"
         position="Software Developer"
-        duration={[
-          "Apr 2016 – June 2017 Junior",
-          "June 2017 – Feb 2019 Intermediate",
-        ]}
+        duration={"Apr 2016 – Feb 2019"}
         location="Cape Town"
         achievements={[
           "Promoted from Junior to Intermediate after just over a year",
@@ -261,7 +249,7 @@ export default function CV() {
           "I was part of a small web team building and maintaining Wordpress websites and converting designs to HTML emails",
         ]}
       />
-      <Section>
+      <Section avoidPrintPageBreak>
         <HospitalityCareer />
         <Education />
         <Hobbies />
@@ -274,9 +262,6 @@ function Heading() {
   return (
     <div className="mb-4 items-baseline lg:flex lg:mb-0 print:flex print:mb-0">
       <h2 className="mb-0 lg:mb-4 print:mb-4">Steven Gouws</h2>
-      <span className="text-xl lg:text-base lg:ml-2 print:text-base print:ml-2">
-        Javascript Developer
-      </span>
     </div>
   );
 }
@@ -336,7 +321,7 @@ function TwoColItem({ heading, location, duration, children }) {
   return (
     <div className="mb-4 flex flex-col lg:items-center lg:justify-between lg:flex-row print:items-center print:justify-between print:flex-row">
       <div>
-        <h3 className="lg:mb-0 print:mb-0">{heading}</h3>
+        <h3>{heading}</h3>
         {(location || duration) && (
           <div className="flex flex-col mb-4 lg:mb-0 print:mb-0">
             <Icon name="location" text={location} classes="mr-2" />
@@ -400,10 +385,8 @@ function Hobbies() {
       <div className="lg:w-9/12 lg:flex print:w-9/12 print:flex">
         <List
           columns={[
-            ["Reading", "Going to the gym"],
-            [
-              'Answering "Whyyy?" 10 million times a day for my 3-year-old daughter Zoe',
-            ],
+            ["Reading", "Playing guitar"],
+            ["Hanging out with that crazy monkey, my 5-year-old daughter"],
           ]}
           flexRatios={[1, 2]}
         />
