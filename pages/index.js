@@ -167,6 +167,11 @@ export default function Home() {
             flex-direction: column;
           }
         }
+        @media (max-width: 1024px) {
+          .animation-bar {
+            bottom: -2px;
+          }
+        }
       `}</style>
 
       <style jsx global>{`
