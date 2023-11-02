@@ -12,7 +12,7 @@ export default function Layout({ children }) {
         <meta charSet="utf-8" />
         <title>Steven Gouws - Javascript Developer</title>
       </Head>
-      <main className="container mx-auto lg:max-w-screen-A4 print:max-w-screen-A4 mx-w-xl bg-white shadow-xl print:shadow-none shadow-2xl py-12 px-12 sm:px-6 print:py-0 rounded-sm">
+      <main className="container mx-auto lg:max-w-screen-A4 print:max-w-screen-A4 mx-w-xl bg-white shadow-xl print:shadow-none shadow-2xl p-8 md:p-12 print:py-0 rounded-sm">
         {children}
         <style jsx global>{`
           @media screen {
@@ -32,7 +32,7 @@ export default function Layout({ children }) {
           }
           @media screen and (max-width: 768px) {
             html {
-              padding: 16px 8px;
+              padding: 16px 8px 16px 8px;
             }
           }
         `}</style>
