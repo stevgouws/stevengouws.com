@@ -13,6 +13,9 @@ export default function Home() {
             <Link href="CV">CV</Link>
           </span>
         </div>
+        <div className="relative w-full">
+          <div role="presentation" className="animation-bar"></div>
+        </div>
       </main>
 
       <style jsx>{`
@@ -132,6 +135,30 @@ export default function Home() {
           margin: 0;
           font-size: 1.25rem;
           line-height: 1.5;
+        }
+
+        .animation-bar {
+          height: 1px;
+          width: 10px;
+          background-color: #f34da0;
+          position: absolute;
+          left: 0;
+          bottom: 8px;
+          animation: animate 7.5s ease-in-out infinite;
+        }
+
+        @keyframes animate {
+          0% {
+            left: 0;
+          }
+
+          50% {
+            left: 100%;
+          }
+
+          0% {
+            left: 0;
+          }
         }
 
         @media (max-width: 600px) {
