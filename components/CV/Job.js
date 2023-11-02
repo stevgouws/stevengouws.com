@@ -44,7 +44,7 @@ export default function Job({
   function Heading() {
     return (
       <div className="mb-4">
-        <h3 className="lg:mb-0 print:mb-0">
+        <h3>
           {position}
           <span className="text-gray-500 font-normal">
             <span className="hidden lg:inline"> |</span>
@@ -67,7 +67,7 @@ export default function Job({
     if (!achievements.length > 0) return null;
     return (
       <div className="mb-4">
-        <h4 className="mb-0">Achievements</h4>
+        <h4>Achievements</h4>
         <List items={achievements} />
       </div>
     );
@@ -77,7 +77,7 @@ export default function Job({
     if (!exampleTasks.length > 0) return null;
     return (
       <div>
-        <h4 className="mb-0">Some things I worked on</h4>
+        <h4>Some things I worked on</h4>
         <List items={exampleTasks} />
       </div>
     );

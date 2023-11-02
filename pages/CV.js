@@ -29,7 +29,7 @@ export default function CV() {
         ]}
         location="Fully remote, based in London"
         achievements={[
-          "Promoted to Senior Software Engineer after just over a year",
+          "Promoted to Senior Software Engineer after a year",
           "Lead on several features and took ownership of deploys and releases",
           "Introduced and became the go-to source of knowledge for Playwright E2E testing across the engineering team",
           "Continuously reduced technical debt by refactoring and retiring various legacy features",
