@@ -4,12 +4,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-html,
-body,
-#__next {
-  height: 100%;
-}
-
 body {
   @apply font-sans;
   @apply text-gray-text;

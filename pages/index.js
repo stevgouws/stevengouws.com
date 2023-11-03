@@ -182,6 +182,12 @@ export default function Home() {
         * {
           box-sizing: border-box;
         }
+
+        html,
+        body,
+        #__next {
+          height: 100%;
+        }
       `}</style>
     </div>
   );
