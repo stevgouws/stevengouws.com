@@ -6,6 +6,7 @@ export default function Link({ children, href, target, displayBlock, icon }) {
       <a
         href={href}
         target={target}
+        rel={target === "_blank" ? "noopener" : undefined}
         className="border-b border-pink-highlight text-pink-highlight"
       >
         {children}
