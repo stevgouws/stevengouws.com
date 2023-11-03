@@ -139,15 +139,15 @@ export default function CV() {
           "Implemented dynamic pricing for ticket insurance depending on total ticket prices",
           "Developed new features and robust UI components in React and AngularJS",
           <>
-            Designed and created mock-ups for Special Offer and other info
-            indicators for our event calendar. An example can be seen on the{" "}
-            <span className="italic">left</span> side of the page{" "}
+            Designed and created{" "}
             <Link
               href="https://user-images.githubusercontent.com/13498291/57140095-dbbf5f80-6dae-11e9-970a-923e819a8eca.png"
               target="_blank"
             >
-              here
-            </Link>
+              mock-ups
+            </Link>{" "}
+            (left side) for Special Offer and other info indicators for our
+            event calendar.
           </>,
         ]}
         tech={[
