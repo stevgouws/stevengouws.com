@@ -1,4 +1,4 @@
-import { array, bool, number, oneOfType, string } from "prop-types";
+import { array, bool, oneOfType, string } from "prop-types";
 export default function List({
   items,
   noWrap,
@@ -23,16 +23,23 @@ export default function List({
     return classes.join(" ");
   }
 
-  return columns.map((column, index) => (
-    <ul key={column} className={getUlClasses({ index })}>
-      {column.map((item) => (
-        <li className={getLiClasses()} key={item}>
-          {styleType === "dash" && "- "}
-          {item}
-        </li>
-      ))}
-    </ul>
-  ));
+  return columns.map((column, index) => {
+    return (
+      <ul key={index} className={getUlClasses({ index })}>
+        {column.map((item) => {
+          return (
+            <li
+              className={getLiClasses()}
+              key={item.children ? item.children[0] : item}
+            >
+              {styleType === "dash" && "- "}
+              {item}
+            </li>
+          );
+        })}
+      </ul>
+    );
+  });
 }
 
 List.propTypes = {

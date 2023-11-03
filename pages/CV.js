@@ -47,7 +47,6 @@ export default function CV() {
           "Wrote various scripts to compile data to spreadsheets",
           <>
             Built data charts using VictoryCharts
-            <br />{" "}
             <List
               items={[
                 <Link
