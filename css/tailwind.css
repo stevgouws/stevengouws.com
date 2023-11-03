@@ -1,12 +1,12 @@
 /* purgecss start ignore */
-@import 'tailwindcss/base';
+@import "tailwindcss/base";
 /* purgecss end ignore */
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
 body {
   @apply font-sans;
-  @apply text-gray-600;
+  @apply text-gray-text;
   @apply antialiased;
 }
 
