@@ -5,7 +5,7 @@ export default function Home() {
     <div className="container">
       <main>
         <div className="flex items-baseline flex-col lg:flex-row print:flex-row">
-          <h1 className="mb-0">Steven Gouws</h1>
+          <h1 className="mb-0 leading-none">Steven Gouws</h1>
           <span className="text-2xl lg:text-base lg:ml-2 print:text-base print:ml-2">
             Javascript Developer
           </span>
@@ -143,7 +143,7 @@ export default function Home() {
           background-color: #f34da0;
           position: absolute;
           left: 0;
-          bottom: 8px;
+          bottom: -4px;
           animation: animate 7.5s ease-in-out infinite;
         }
 
@@ -165,11 +165,6 @@ export default function Home() {
           .grid {
             width: 100%;
             flex-direction: column;
-          }
-        }
-        @media (max-width: 1024px) {
-          .animation-bar {
-            bottom: -2px;
           }
         }
       `}</style>
