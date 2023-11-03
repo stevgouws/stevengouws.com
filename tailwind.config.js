@@ -137,7 +137,7 @@ module.exports = {
         700: "#b83280",
         800: "#97266d",
         900: "#702459",
-        highlight: "#f34da0",
+        highlight: "#d7237d",
       },
     },
     spacing: {
