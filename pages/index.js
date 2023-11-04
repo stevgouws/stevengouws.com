@@ -7,7 +7,7 @@ export default function Home() {
         <div className="flex items-baseline flex-col lg:flex-row print:flex-row">
           <h1 className="mb-0 leading-none">Steven Gouws</h1>
           <span className="text-2xl lg:text-base lg:ml-2 print:text-base print:ml-2">
-            Javascript Developer
+            JavaScript Developer
           </span>
           <span className="text-2xl lg:text-base lg:ml-2 print:text-base print:ml-2">
             <Link href="CV">CV</Link>

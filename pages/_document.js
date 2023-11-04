@@ -13,9 +13,9 @@ class CustomDocument extends Document {
           <meta charSet="utf-8" />
           <meta
             name="description"
-            content="Steven Gouws - Javascript Developer"
+            content="Steven Gouws - JavaScript Developer"
           />
-          <title>Steven Gouws - Javascript Developer</title>
+          <title>Steven Gouws - JavaScript Developer</title>
         </Head>
         <body>
           <Main />

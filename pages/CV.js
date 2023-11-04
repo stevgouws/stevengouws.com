@@ -218,7 +218,7 @@ export default function CV() {
         tech={[
           "VueJS",
           "Laravel (PHP)",
-          "Javascript (ES5, ES6)",
+          "JavaScript (ES5, ES6)",
           "HTML, CSS & Stylus",
           "NodeJS",
           "SQL Server",
