@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test": "playwright test"
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.1.2",
