@@ -67,6 +67,7 @@ export default function Jobs() {
           "Firebase",
           "GCP",
           "Playwright",
+          "Mocha",
           "Appium",
           "Detox",
           "Elasticsearch",
