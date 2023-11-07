@@ -1,5 +1,4 @@
-import { any } from "prop-types";
-export default function Layout({ children }) {
+export default function Paper({ children }) {
   return (
     <main className="container mx-auto lg:max-w-screen-A4 print:max-w-screen-A4 mx-w-xl bg-white shadow-xl print:shadow-none shadow-2xl p-8 md:p-12 print:py-0 rounded-md lg:rounded-sm">
       {children}
@@ -28,7 +27,3 @@ export default function Layout({ children }) {
     </main>
   );
 }
-
-Layout.propTypes = {
-  children: any,
-};

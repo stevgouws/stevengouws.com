@@ -1,4 +1,4 @@
-import Layout from "../components/common/Layout";
+import Paper from "../components/common/Paper";
 import Link from "../components/common/Link";
 import Section from "../components/common/Section";
 import List from "../components/common/List";
@@ -8,7 +8,7 @@ import Jobs from "../components/CV/Jobs";
 
 export default function CV() {
   return (
-    <Layout>
+    <Paper>
       <Section>
         <div className="flex-col flex justify-between items-baseline lg:flex-row print:flex-row">
           <div className="flex flex-col flex-2">
@@ -24,7 +24,7 @@ export default function CV() {
         <Education />
         <Hobbies />
       </Section>
-    </Layout>
+    </Paper>
   );
 }
 
@@ -130,12 +130,10 @@ function Hobbies() {
     <div className="mb-4 lg:flex lg:items-center lg:justify-between print:flex print:items-center print:justify-between">
       <h3 className="lg:mb-0 print:mb-0">Hobbies</h3>
       <div className="lg:w-9/12 lg:flex print:w-9/12 print:flex">
+        <List items={["Reading", "Playing guitar"]} classes="flex-1" />
         <List
-          columns={[
-            ["Reading", "Playing guitar"],
-            ["Hanging out with that crazy monkey, my 5-year-old daughter"],
-          ]}
-          flexRatios={[1, 2]}
+          items={["Hanging out with that crazy monkey, my 5-year-old daughter"]}
+          classes="flex-2"
         />
       </div>
     </div>
