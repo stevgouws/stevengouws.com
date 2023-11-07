@@ -1,6 +1,6 @@
-import List from "../common/List";
+import List from "../../components/List";
 import Job from "./Job";
-import Link from "../common/Link";
+import Link from "../../components/Link";
 
 export default function Jobs() {
   return (

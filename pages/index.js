@@ -1,4 +1,4 @@
-import Link from "../components/common/Link";
+import Link from "../components/Link";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
             JavaScript Developer
           </span>
           <span className="text-2xl lg:text-base lg:ml-2 print:text-base print:ml-2">
-            <Link href="CV">CV</Link>
+            <Link href="cv">CV</Link>
           </span>
         </div>
         <div className="relative w-full">

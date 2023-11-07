@@ -1,6 +1,6 @@
-import Icon from "../common/Icon";
-import List from "../common/List";
-import Section from "../common/Section";
+import Icon from "../../components/Icon";
+import List from "../../components/List";
+import Section from "../../components/Section";
 import Duration from "./Duration";
 
 export default function Job({

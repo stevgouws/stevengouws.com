@@ -1,5 +1,5 @@
-import Layout from "../components/common/Layout";
-import Section from "../components/common/Section";
+import Paper from "../../components/Paper";
+import Section from "../../components/Section";
 
 export default function Typography() {
   const headingTags = ["h1", "h2", "h3", "h4", "h5", "h6"];
@@ -7,7 +7,7 @@ export default function Typography() {
     return `<${tag}>A Visual Type Scale</${tag}>`;
   });
   return (
-    <Layout>
+    <Paper>
       <div>
         {headingStrings.map((heading) => (
           <Section key={heading}>
@@ -43,6 +43,6 @@ export default function Typography() {
           </p>
         </Section>
       </div>
-    </Layout>
+    </Paper>
   );
 }

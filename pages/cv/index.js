@@ -1,10 +1,10 @@
-import Paper from "../components/common/Paper";
-import Link from "../components/common/Link";
-import Section from "../components/common/Section";
-import List from "../components/common/List";
-import Icon from "../components/common/Icon";
-import Duration from "../components/CV/Duration";
-import Jobs from "../components/CV/Jobs";
+import Paper from "../../components/Paper";
+import Link from "../../components/Link";
+import Section from "../../components/Section";
+import List from "../../components/List";
+import Icon from "../../components/Icon";
+import Duration from "./Duration";
+import Jobs from "./Jobs";
 
 export default function CV() {
   return (
@@ -132,7 +132,9 @@ function Hobbies() {
       <div className="lg:w-9/12 lg:flex print:w-9/12 print:flex">
         <List items={["Reading", "Playing guitar"]} classes="flex-1" />
         <List
-          items={["Hanging out with that crazy monkey, my 5-year-old daughter"]}
+          items={[
+            "Hanging out with that crazy cat, my 5-year-old daughter Zoe",
+          ]}
           classes="flex-2"
         />
       </div>
