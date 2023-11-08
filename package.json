@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "playwright test"
+    "test": "playwright test --grep-invert @visual",
+    "test-visual": "playwright test --grep @visual"
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.1.2",

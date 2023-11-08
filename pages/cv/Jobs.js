@@ -155,10 +155,7 @@ export default function Jobs() {
           I worked mainly on the Front-End of our White-label product for
           selling event and theatre tickets. We ran the White-label under our
           own{" "}
-          <Link
-            href="https://www.fromtheboxoffice.com/category/162-theatre/"
-            target="_blank"
-          >
+          <Link href="https://www.fromtheboxoffice.com/" target="_blank">
             From The Box Office
           </Link>{" "}
           brand where we sold directly to an average of about 500,000 unique
