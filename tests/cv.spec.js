@@ -45,11 +45,7 @@ test.describe("given that I visit the CV page", async () => {
 
   test('given I click on "iOS" it should open https://apps.apple.com/gb/app/fika/id1465248342 in a new tab', async ({
     page,
-  }, { project }) => {
-    test.skip(
-      project.name === "Mobile Safari",
-      "Opens in App store directly outside of Playwright"
-    );
+  }) => {
     const newPagePromise = page.waitForEvent("popup");
     await page.getByRole("link", { name: "iOS" }).click();
     const newPage = await newPagePromise;
