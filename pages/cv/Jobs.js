@@ -86,9 +86,9 @@ export default function Jobs() {
         ]}
       >
         <p>
-          At Fika we're trying to teach skills to avoid burnout and to bring
-          Mental Fitness to the world. I work across the stack using JavaScript
-          in our NextJS{" "}
+          Fika is a startup where we're teaching skills to avoid burnout and
+          trying to bring Mental Fitness to the world. I work across the stack
+          using JavaScript in our NextJS{" "}
           <Link href="https://app.fika.community/welcome/" target="_blank">
             Web App
           </Link>

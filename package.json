@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "test": "playwright test --grep-invert @visual --project 'chromium' ",
-    "test-visual": "playwright test --grep @visual"
+    "test-visual": "playwright test --grep @visual",
+    "approve-visual-changes": "playwright test --grep @visual --update-snapshots"
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.1.2",
