@@ -1,3 +1,4 @@
+import { formatDistanceToNowStrict } from "date-fns";
 import Paper from "../../components/Paper";
 import Link from "../../components/Link";
 import Section from "../../components/Section";
@@ -133,7 +134,10 @@ function Hobbies() {
         <List items={["Reading", "Playing guitar"]} classes="flex-1" />
         <List
           items={[
-            "Hanging out with that crazy cat, my 5-year-old daughter Zoe",
+            `Hanging out with that crazy cat, my ${formatDistanceToNowStrict(
+              new Date(2018, 1, 13),
+              { unit: "year", roundingMethod: "floor" }
+            ).replace("years", "year")}-old daughter Zoe`,
           ]}
           classes="flex-2"
         />
