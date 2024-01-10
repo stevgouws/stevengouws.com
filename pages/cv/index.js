@@ -41,9 +41,9 @@ function Introduction() {
   return (
     <>
       <p>
-        I'm a friendly, self-sufficient Software Engineer with 8 years
-        commercial experience in shipping code to users and working in
-        cross-functional teams.
+        I'm a friendly, self-sufficient Software Engineer with{" "}
+        {getNumberOfYearsFromDate(new Date("2015-09-01"))} commercial experience
+        in shipping code to users and working in cross-functional teams.
       </p>
       <p className="mb-0">
         I'm always keen to learn and grow my skills. I get a kick out of it
@@ -134,9 +134,8 @@ function Hobbies() {
         <List items={["Reading", "Playing guitar"]} classes="flex-1" />
         <List
           items={[
-            `Hanging out with that crazy cat, my ${formatDistanceToNowStrict(
-              new Date(2018, 1, 13),
-              { unit: "year", roundingMethod: "floor" }
+            `Hanging out with that crazy cat, my ${getNumberOfYearsFromDate(
+              new Date("2018-01-13")
             ).replace("years", "year")}-old daughter Zoe`,
           ]}
           classes="flex-2"
@@ -144,4 +143,11 @@ function Hobbies() {
       </div>
     </div>
   );
+}
+
+function getNumberOfYearsFromDate(date) {
+  return formatDistanceToNowStrict(date, {
+    unit: "year",
+    roundingMethod: "floor",
+  });
 }
