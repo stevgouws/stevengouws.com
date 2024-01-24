@@ -147,12 +147,13 @@ export const TooltipContent = React.forwardRef(function TooltipContent(
         .tooltip {
           background-color: color-mix(
             in srgb,
-            var(--blue-dark) 75%,
+            var(--blue-dark) 85%,
             transparent
           );
           color: white;
           padding: 0.5rem 1rem;
           border-radius: 8px;
+          text-align: center;
         }
       `}</style>
     </FloatingPortal>

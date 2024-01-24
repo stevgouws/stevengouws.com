@@ -51,7 +51,7 @@ function MoreInfo() {
         *
       </TooltipTrigger>
       <TooltipContent>
-        Extracts from our last review cycle at Fika
+        Extracts from our last review cycle at Fika with permission
       </TooltipContent>
     </Tooltip>
   );

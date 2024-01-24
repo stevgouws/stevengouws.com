@@ -11,7 +11,7 @@ export function QuoteCard({
       <div className="review-card-wrapper">
         <div
           className="review-card bg-white px-8 py-6 rounded-md"
-          title={`View ${name}'s LinkedIn profile`}
+          title={`View ${name}'s profile on LinkedIn`}
           onClick={() => {
             window.open(linkedInUrl, "_blank", "noopener");
           }}
