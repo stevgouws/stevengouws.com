@@ -52,7 +52,7 @@ export default function Jobs() {
               ]}
             />
           </>,
-          "Developed new features and robust UI components in React and React Native",
+          "Developed new features and robust, accessible UI components in React and React Native",
           "Aligned with the design team to ensure we have consistency between our design system and component library in Figma and in code",
           "Wrote NodeJS apis, implemented pubsub events and scheduled jobs with Firebase & GCP",
           "Wrote Firestore data migrations",

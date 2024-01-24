@@ -94,6 +94,8 @@ module.exports = {
         700: "#2c7a7b",
         800: "#285e61",
         900: "#234e52",
+        highlight: "#79E6E5",
+        highlightLight: "#D4F7F7",
       },
       blue: {
         100: "#ebf8ff",
@@ -105,6 +107,7 @@ module.exports = {
         700: "#2b6cb0",
         800: "#2c5282",
         900: "#2a4365",
+        dark: "#151C30",
       },
       indigo: {
         100: "#ebf4ff",
@@ -274,6 +277,15 @@ module.exports = {
         "Arial",
         "sans-serif",
       ],
+      sansAlt: [
+        "Montserrat",
+        "'Open Sans'",
+        "'Clear Sans'",
+        "'Helvetica Neue'",
+        "Helvetica",
+        "Arial",
+        "sans-serif",
+      ],
     },
     fontSize: {
       xs: "0.75rem",
@@ -282,8 +294,8 @@ module.exports = {
       lg: "1.125rem",
       xl: "1.25rem",
       "2xl": "1.5rem",
-      // "3xl": "1.875rem",
-      "3xl": "2.25rem",
+      "3xl": "1.875rem",
+      // "3xl": "2.25rem",
       "4xl": "3rem",
       "5xl": "4rem",
       // "6xl": "4rem",

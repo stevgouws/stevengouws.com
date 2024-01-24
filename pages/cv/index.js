@@ -33,6 +33,13 @@ function Heading() {
   return (
     <div className="mb-4 items-baseline lg:flex lg:mb-0 print:flex print:mb-0">
       <h2 className="mb-0 lg:mb-4 print:mb-4">Steven Gouws</h2>
+      <style jsx>
+        {`
+          h2 {
+            font-size: 2.25rem;
+          }
+        `}
+      </style>
     </div>
   );
 }

@@ -1,192 +1,74 @@
-import Link from "../components/Link";
+import Button from "../components/Button";
+import Quotes from "../containers/quotes";
 
 export default function Home() {
   return (
-    <div className="container">
+    <div>
       <main>
-        <div className="flex items-baseline flex-col lg:flex-row print:flex-row">
-          <h1 className="mb-0 leading-none">Steven Gouws</h1>
-          <span className="text-2xl lg:text-base lg:ml-2 print:text-base print:ml-2">
-            JavaScript Developer
-          </span>
-          <span className="text-2xl lg:text-base lg:ml-2 print:text-base print:ml-2">
-            <Link href="cv">CV</Link>
-          </span>
-        </div>
-        <div className="relative w-full">
-          <div role="presentation" className="animation-bar"></div>
-        </div>
+        <section className="max-w-3xl pt-12 pb-16 md:pt-16 md:pb-24 xl:py-48 px-8 md:px-24 xl:px-48 box-border">
+          <div className="flex items-baseline flex-col print:flex-row">
+            <ProfilePic className="mb-12" />
+            <h1 className="text-5xl mb-0 leading-none font-sansAlt font-bold">
+              Steven Gouws
+            </h1>
+            <h2 className="text-3xl font-normal">Full-stack developer</h2>
+            <p>
+              I’m a Full-stack developer with <b>8 years experience</b> building
+              web apps commercially.
+            </p>
+            <p>
+              I <b>love</b> what I do and care deeply about how what I build
+              translates into <b>user experience</b>.
+            </p>
+            <Button
+              className="mt-12"
+              onClick={() => {
+                window.location.href = "/cv";
+              }}
+            >
+              Check out my CV
+            </Button>
+          </div>
+        </section>
+        <section className="bg-teal-highlightLight py-24 flex flex-col items-center justify-center">
+          <Quotes />
+        </section>
       </main>
 
       <style jsx>{`
-        .container {
-          min-height: 100%;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
         main {
-          padding: 5rem 0;
-          flex: 1;
+          min-height: 100%;
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          align-items: center;
         }
 
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .animation-bar {
-          height: 1px;
-          width: 10px;
-          background-color: #f34da0;
-          position: absolute;
-          left: 0;
-          bottom: -4px;
-          animation: animate 7.5s ease-in-out infinite;
-        }
-
-        @keyframes animate {
-          0% {
-            left: 0;
-          }
-
-          50% {
-            left: 100%;
-          }
-
-          0% {
-            left: 0;
-          }
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
+        p {
+          font-size: 1.125rem;
         }
       `}</style>
+    </div>
+  );
+}
 
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
+function ProfilePic({ className = "" }) {
+  return (
+    <div className={className}>
+      <div className="clip-circle bg-teal-highlight pt-4">
+        <img
+          src={"./steven-profile-pic.webp"}
+          alt={"Head-shot photo of Steven Gouws"}
+        />
+      </div>
+      <style jsx>{`
+        img {
+          position: relative;
+          left: 5px;
+          mix-blend-mode: luminosity;
         }
 
-        * {
-          box-sizing: border-box;
-        }
-
-        html,
-        body,
-        #__next {
-          height: 100%;
+        .clip-circle {
+          width: 150px;
+          clip-path: circle(50% at 50% 50%);
         }
       `}</style>
     </div>
