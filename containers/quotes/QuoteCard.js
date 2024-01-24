@@ -25,7 +25,7 @@ export function QuoteCard({
           />
           <div className="relative quote-wrapper">
             <div className="italic quote">
-              <p key={quote}>{quote}</p>
+              <p key={quote}>{replaceAsterisksWithBoldTags(quote)}</p>
             </div>
           </div>
         </div>
@@ -138,4 +138,25 @@ export function QuoteCard({
       </style>
     </>
   );
+}
+
+function replaceAsterisksWithBoldTags(text) {
+  const emphasisRegex = /\*(.*?)\*/g;
+  const matches = text.matchAll(emphasisRegex);
+  const emphasisRanges = [...matches].map((match) => ({
+    start: match.index,
+    end: match.index + match[0].length,
+    text: match[1],
+  }));
+
+  const textParts = [];
+  let lastEnd = 0;
+  emphasisRanges.forEach((range) => {
+    textParts.push(text.slice(lastEnd, range.start));
+    textParts.push(<b>{range.text}</b>);
+    lastEnd = range.end;
+  });
+  textParts.push(text.slice(lastEnd));
+
+  return textParts;
 }
