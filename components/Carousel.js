@@ -81,6 +81,7 @@ function NavButton({ onClick, hide, ariaLabel, direction }) {
         {`
           button {
             padding: 1rem;
+            padding-${direction}: 0.75rem;
           }
 
           img {
