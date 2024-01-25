@@ -1,24 +1,23 @@
 import { useRef, useState } from "react";
 import useSound from "use-sound";
-
 import swipeMp3 from "../public/sounds/swipe.mp3";
 import swipeBackMp3 from "../public/sounds/swipe-back.mp3";
+import shrpMp3 from "../public/sounds/shrp.mp3";
 
 export default function Carousel({ children, className = "" }) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const containerRef = useRef();
   const [playSwipe] = useSound(swipeMp3);
   const [playSwipeBack] = useSound(swipeBackMp3);
+  const [playSwipeFast] = useSound(shrpMp3);
 
   function scrollToSlide(index) {
     if (!containerRef.current) return;
     const numberOfSlidesToScroll = Math.abs(index - currentSlideIndex);
-    if (numberOfSlidesToScroll > 0) playSwipe();
-    else playSwipeBack();
-    for (let i = 2; i <= numberOfSlidesToScroll; i++) {
-      setTimeout(() => {
-        playSwipe();
-      }, 300);
+    if (numberOfSlidesToScroll > 2) {
+      playSwipeFast();
+    } else {
+      numberOfSlidesToScroll > 0 ? playSwipe() : playSwipeBack();
     }
     containerRef.current.children[index].scrollIntoView({
       behavior: "smooth",
