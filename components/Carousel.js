@@ -14,11 +14,11 @@ export default function Carousel({ children, className = "" }) {
   function scrollToSlide(index) {
     if (!containerRef.current) return;
     const numberOfSlidesToScroll = Math.abs(index - currentSlideIndex);
-    if (numberOfSlidesToScroll > 2) {
-      playSwipeFast();
-    } else {
-      numberOfSlidesToScroll > 0 ? playSwipe() : playSwipeBack();
-    }
+
+    if (numberOfSlidesToScroll > 0) playSwipe();
+    else playSwipeBack();
+    if (numberOfSlidesToScroll > 2) playSwipeFast();
+
     containerRef.current.children[index].scrollIntoView({
       behavior: "smooth",
       inline: "start",
