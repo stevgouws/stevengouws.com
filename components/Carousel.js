@@ -1,11 +1,25 @@
 import { useRef, useState } from "react";
+import useSound from "use-sound";
+
+import swipeMp3 from "../public/sounds/swipe.mp3";
+import swipeBackMp3 from "../public/sounds/swipe-back.mp3";
 
 export default function Carousel({ children, className = "" }) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const containerRef = useRef();
+  const [playSwipe] = useSound(swipeMp3);
+  const [playSwipeBack] = useSound(swipeBackMp3);
 
   function scrollToSlide(index) {
     if (!containerRef.current) return;
+    const numberOfSlidesToScroll = Math.abs(index - currentSlideIndex);
+    if (numberOfSlidesToScroll > 0) playSwipe();
+    else playSwipeBack();
+    for (let i = 2; i <= numberOfSlidesToScroll; i++) {
+      setTimeout(() => {
+        playSwipe();
+      }, 300);
+    }
     containerRef.current.children[index].scrollIntoView({
       behavior: "smooth",
       inline: "start",
@@ -32,9 +46,7 @@ export default function Carousel({ children, className = "" }) {
           direction="left"
           onClick={goToPrevious}
           hide={currentSlideIndex === 0}
-        >
-          &lt;
-        </NavButton>
+        />
         <div className="carousel-inner" ref={containerRef}>
           {children}
         </div>
@@ -43,9 +55,7 @@ export default function Carousel({ children, className = "" }) {
           direction="right"
           onClick={goToNext}
           hide={currentSlideIndex === children.length - 1}
-        >
-          &gt;
-        </NavButton>
+        />
       </div>
       <ProgressIndicator
         count={children.length}
