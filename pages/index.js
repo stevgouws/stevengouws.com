@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <main>
-        <section className="max-w-3xl pt-12 pb-16 md:pt-16 md:pb-24 xl:py-48 px-8 md:px-24 xl:px-48 box-border">
+        <section className="max-w-3xl pt-12 pb-16 md:pt-16 md:pb-24 xl:py-48 px-8 md:px-24 box-border relative">
           <div className="flex items-baseline flex-col print:flex-row">
             <ProfilePic className="mb-12" />
             <h1 className="text-5xl mb-0 leading-none font-sansAlt font-bold">
@@ -20,14 +20,19 @@ export default function Home() {
               I <b>love</b> what I do and care deeply about how what I build
               translates into <b>user experience</b>.
             </p>
-            <Button
-              className="mt-12"
-              onClick={() => {
-                window.location.href = "/cv";
-              }}
-            >
-              Check out my CV
-            </Button>
+            <div className="mt-12 flex gap-2 md:gap-4 flex-col md:flex-row">
+              <div className="flex-shrink-0">
+                <Button
+                  className="width-full"
+                  onClick={() => {
+                    window.location.href = "/cv";
+                  }}
+                >
+                  Check out my CV
+                </Button>
+              </div>
+              <ScrollDown />
+            </div>
           </div>
         </section>
         <section className="bg-teal-highlightLight py-24 flex flex-col items-center justify-center">
@@ -71,6 +76,44 @@ function ProfilePic({ className = "" }) {
           clip-path: circle(50% at 50% 50%);
         }
       `}</style>
+    </div>
+  );
+}
+
+function ScrollDown() {
+  return (
+    <div className="scroll-down">
+      <div className="text">
+        <div>or kind words from colleagues</div>
+      </div>
+      <img src="./hand-drawn-arrow.webp" />
+      <style jsx>
+        {`
+          .scroll-down {
+            display: flex;
+            align-items: center;
+          }
+
+          .text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+
+          img {
+            height: 40px;
+            position: relative;
+            top: 11px;
+            left: 3px;
+          }
+
+          @media (max-width: 640px) {
+            .scroll-down {
+              margin-left: 4px;
+            }
+          }
+        `}
+      </style>
     </div>
   );
 }
