@@ -25,7 +25,7 @@ export function QuoteCard({
           />
           <div className="relative quote-wrapper">
             <div className="italic quote">
-              <p key={quote}>{replaceAsterisksWithBoldTags(quote)}</p>
+              <p>{replaceAsterisksWithBoldTags(quote)}</p>
             </div>
           </div>
         </div>
@@ -153,7 +153,7 @@ function replaceAsterisksWithBoldTags(text) {
   let lastEnd = 0;
   emphasisRanges.forEach((range) => {
     textParts.push(text.slice(lastEnd, range.start));
-    textParts.push(<b>{range.text}</b>);
+    textParts.push(<b key={range.text}>{range.text}</b>);
     lastEnd = range.end;
   });
   textParts.push(text.slice(lastEnd));
