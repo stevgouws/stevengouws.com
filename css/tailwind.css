@@ -8,6 +8,8 @@ body {
   @apply font-sans;
   @apply text-gray-text;
   @apply antialiased;
+  @apply p-0;
+  @apply m-0;
 }
 
 h1 {
@@ -52,4 +54,34 @@ h5,
 h6,
 p {
   @apply mb-4;
+}
+
+:root {
+  /* Colours */
+  --teal-highlight: #79e6e5;
+  --blue-dark: #151c30;
+
+  /* Outline */
+  --outline-box-shadow: 0 0 0 3px var(--blue-dark) !important;
+  --outline-transition: box-shadow 0.3s ease-out !important;
+}
+
+* {
+  @apply box-border;
+}
+
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+*:focus-visible {
+  outline: none !important;
+  box-shadow: var(--outline-box-shadow);
+  transition: var(--outline-transition);
 }

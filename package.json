@@ -11,6 +11,7 @@
     "approve-visual-changes": "playwright test --grep @visual --update-snapshots"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.26.6",
     "@fullhuman/postcss-purgecss": "^2.1.2",
     "autoprefixer": "^9.7.6",
     "date-fns": "2.30.0",
@@ -18,7 +19,8 @@
     "postcss-import": "^12.0.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "tailwindcss": "^1.9.6"
+    "tailwindcss": "^1.9.6",
+    "use-sound": "^4.0.1"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.23.2",
@@ -26,7 +28,8 @@
     "@playwright/test": "^1.39.0",
     "@types/node": "^20.8.10",
     "eslint": "^8.53.0",
+    "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react": "^7.33.2"
+    "file-loader": "^6.2.0"
   }
 }
