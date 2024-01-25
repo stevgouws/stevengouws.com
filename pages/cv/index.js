@@ -79,6 +79,9 @@ function ContactDetails() {
       <Link displayBlock href="mailto:steven@stevengouws.com">
         steven@stevengouws.com
       </Link>
+      <Link displayBlock href="https://stevengouws.com/" target="_blank">
+        https://stevengouws.com/
+      </Link>
       <Link displayBlock href="https://github.com/stevgouws" target="_blank">
         github.com/stevgouws
       </Link>
