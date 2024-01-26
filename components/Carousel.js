@@ -41,7 +41,6 @@ export default function Carousel({ children, className = "" }) {
     >
       <div className="flex items-center md:gap-8">
         <NavButton
-          ariaLabel="Previous"
           direction="left"
           onClick={goToPrevious}
           hide={currentSlideIndex === 0}
@@ -50,7 +49,6 @@ export default function Carousel({ children, className = "" }) {
           {children}
         </div>
         <NavButton
-          ariaLabel="Next"
           direction="right"
           onClick={goToNext}
           hide={currentSlideIndex === children.length - 1}
@@ -76,13 +74,17 @@ export default function Carousel({ children, className = "" }) {
   );
 }
 
-function NavButton({ onClick, hide, ariaLabel, direction }) {
+function NavButton({ onClick, hide, direction }) {
   return (
     <button
       className={`flex items-center hover:opacity-75 justify-center ${
         hide ? "invisible" : ""
       }`}
-      aria-label={ariaLabel}
+      aria-hidden
+      // hide nav buttons from screen readers as they can scroll the carousel without it and
+      // then we don't have to track which slide is currently active
+      // basically as far as the screen reader is concerned, the carousel is just a list of quotes
+      // all shown at once
       onClick={onClick}
     >
       <img src={`./arrow-${direction}.webp`} />

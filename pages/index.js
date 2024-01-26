@@ -1,8 +1,10 @@
+import React from "react";
 import Button from "../components/Button";
 import Quotes from "../containers/quotes";
 import { numberOfYearsExperience } from "../utils";
 
 export default function Home() {
+  const quotesSectionRef = React.useRef(null);
   return (
     <div>
       <main>
@@ -33,11 +35,20 @@ export default function Home() {
                   Check out my CV
                 </Button>
               </div>
-              <ScrollDown />
+              <ScrollDown
+                onClick={() => {
+                  quotesSectionRef.current.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+              />
             </div>
           </div>
         </section>
-        <section className="bg-teal-highlightLight py-24 flex flex-col items-center justify-center">
+        <section
+          className="bg-teal-highlightLight py-24 flex flex-col items-center justify-center"
+          ref={quotesSectionRef}
+        >
           <Quotes />
         </section>
       </main>
@@ -82,13 +93,19 @@ function ProfilePic({ className = "" }) {
   );
 }
 
-function ScrollDown() {
+function ScrollDown({ onClick }) {
   return (
     <div className="scroll-down">
-      <div className="text">
+      <div className="text" aria-hidden>
         <div>or kind words from colleagues</div>
       </div>
-      <img src="./hand-drawn-arrow.webp" />
+      <img
+        src="./hand-drawn-arrow.webp"
+        onClick={onClick}
+        role="button"
+        tabIndex={0}
+        aria-label="or kind words from colleagues"
+      />
       <style jsx>
         {`
           .scroll-down {
@@ -103,6 +120,7 @@ function ScrollDown() {
           }
 
           img {
+            cursor: pointer;
             height: 40px;
             position: relative;
             top: 11px;
