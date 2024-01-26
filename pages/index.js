@@ -1,5 +1,6 @@
 import Button from "../components/Button";
 import Quotes from "../containers/quotes";
+import { numberOfYearsExperience } from "../utils";
 
 export default function Home() {
   return (
@@ -13,8 +14,9 @@ export default function Home() {
             </h1>
             <h2 className="text-3xl font-normal">Full-stack developer</h2>
             <p>
-              I’m a Full-stack developer with <b>8 years experience</b> building
-              web apps commercially.
+              I’m a Full-stack developer with{" "}
+              <b>{numberOfYearsExperience} years experience</b> building web
+              apps commercially.
             </p>
             <p>
               I <b>love</b> what I do and care deeply about how what I build

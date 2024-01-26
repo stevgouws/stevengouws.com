@@ -1,4 +1,3 @@
-import { formatDistanceToNowStrict } from "date-fns";
 import Paper from "../../components/Paper";
 import Link from "../../components/Link";
 import Section from "../../components/Section";
@@ -6,6 +5,7 @@ import List from "../../components/List";
 import Icon from "../../components/Icon";
 import Duration from "./Duration";
 import Jobs from "./Jobs";
+import { getNumberOfYearsFromDate, numberOfYearsExperience } from "../../utils";
 
 export default function CV() {
   return (
@@ -49,8 +49,8 @@ function Introduction() {
     <>
       <p>
         I'm a friendly, self-sufficient Software Engineer with{" "}
-        {getNumberOfYearsFromDate(new Date("2015-09-01"))} commercial experience
-        in shipping code to users and working in cross-functional teams.
+        {numberOfYearsExperience} years commercial experience in shipping code
+        to users and working in cross-functional teams.
       </p>
       <p className="mb-0">
         I'm always keen to learn and grow my skills. I get a kick out of it
@@ -146,18 +146,11 @@ function Hobbies() {
           items={[
             `Hanging out with that crazy cat, my ${getNumberOfYearsFromDate(
               new Date("2018-01-13")
-            ).replace("years", "year")}-old daughter Zoe`,
+            )}year-old daughter Zoe`,
           ]}
           classes="flex-2"
         />
       </div>
     </div>
   );
-}
-
-function getNumberOfYearsFromDate(date) {
-  return formatDistanceToNowStrict(date, {
-    unit: "year",
-    roundingMethod: "floor",
-  });
 }
