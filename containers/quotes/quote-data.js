@@ -63,28 +63,18 @@ export const quotes = [
       "You're incredible at *leading by example with refactoring, clear and transparent communication*, and you're the biggest advocate of #dev-chat I know. You always inspire me to be better at this.",
   },
   {
-    ...authors.slex,
-    quote:
-      "You have been *great at scoping out work and detailing how to build it*. It has resulted in the most rapid timing and refining sessions we have ever done. Really happy with that.",
-  },
-  {
     ...authors.ste,
     quote:
       "Keep on being so open to *offer help to others*, writing clear and comprehensive dev notes and *fostering a good team culture* through your *positive and light-hearted attitude*.",
   },
   {
+    ...authors.slex,
+    quote:
+      "You have been *great at scoping out work and detailing how to build it*. It has resulted in the most rapid timing and refining sessions we have ever done. Really happy with that.",
+  },
+  {
     ...authors.lilian,
     quote:
       "Steven (as well as the rest of the team) is *very good at explaining new coding concepts* or tech stack related things to me *without being at all patronising or intimidating*.",
-  },
-  {
-    ...authors.slex,
-    quote:
-      "Personally, I feel confident having you in technical discussions with the product team because *you communicate well*. Sophie previously has complimented you to me on this topic.",
-  },
-  {
-    ...authors.sophie,
-    quote:
-      "You communicate well where you'll be / where you're at with stuff. This is great because you're *leading by example for the rest of the team*. The team can see you're taking the time to keep product and everyone else informed, and I can see that rubs off on everyone else.",
   },
 ];
