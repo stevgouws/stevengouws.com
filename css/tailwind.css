@@ -59,6 +59,7 @@ p {
 :root {
   /* Colours */
   --teal-highlight: #79e6e5;
+  --teal-highlight-light: #d4f7f7;
   --blue-dark: #151c30;
 
   /* Outline */
