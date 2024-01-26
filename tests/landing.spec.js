@@ -12,7 +12,7 @@ test.describe("Landing page", async () => {
   test("when I click on the CV link it should go to the CV page", async ({
     page,
   }) => {
-    await page.getByRole("link", { name: "CV" }).click();
+    await page.getByRole("button", { name: "Check out my CV" }).click();
     await expect(page).toHaveURL("/cv");
   });
 });
