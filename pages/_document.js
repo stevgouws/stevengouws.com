@@ -15,9 +15,17 @@ class CustomDocument extends Document {
           <meta charSet="utf-8" />
           <meta
             name="description"
-            content="Steven Gouws - JavaScript Developer"
+            content="Steven Gouws - Full-stack Developer"
           />
           <title>Steven Gouws - Full-stack Developer</title>
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://stevengouws.com/" />
+          <meta property="og:title" content="Steven Gouws" />
+          <meta property="og:description" content="Full-stack Developer" />
+          <meta
+            property="og:image"
+            content="https://stevengouws.com/open-graph-image.webp"
+          />
         </Head>
         <body>
           <Main />
