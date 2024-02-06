@@ -1,4 +1,11 @@
-const authors = {
+interface Author {
+  name: string;
+  title: string;
+  profilePicFileName: string;
+  linkedInUrl: string;
+}
+
+const authors: { [name: string]: Author } = {
   slex: {
     name: "Alex Stroukov",
     title: "Head of Engineering",
@@ -31,7 +38,11 @@ const authors = {
   },
 };
 
-export const quotes = [
+interface Quote extends Author {
+  quote: string;
+}
+
+export const quotes: Quote[] = [
   {
     ...authors.slex,
     quote:

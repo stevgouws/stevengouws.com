@@ -1,5 +1,5 @@
 module.exports = {
-  // purge: ["./components/**/*.js", "./containers/**/*.js", "./pages/**/*.js"], // configured in postcss.config.js
+  // purge: ["./components/**/*.tsx", "./containers/**/*.tsx", "./pages/**/*.tsx"], // configured in postcss.config.js
   prefix: "",
   important: false,
   separator: ":",

@@ -2,9 +2,10 @@ import React from "react";
 import Button from "../components/Button";
 import Quotes from "../containers/quotes";
 import { numberOfYearsExperience } from "../utils";
+import { HasClassName } from "../types";
 
 export default function Home() {
-  const quotesSectionRef = React.useRef(null);
+  const quotesSectionRef = React.useRef<HTMLDivElement>(null);
   return (
     <div>
       <main>
@@ -27,7 +28,7 @@ export default function Home() {
             <div className="mt-12 flex gap-2 md:gap-4 flex-col md:flex-row">
               <div className="flex-shrink-0">
                 <Button
-                  className="width-full"
+                  className="full-width"
                   onClick={() => {
                     window.location.href = "/cv";
                   }}
@@ -37,6 +38,7 @@ export default function Home() {
               </div>
               <ScrollDown
                 onClick={() => {
+                  if (!quotesSectionRef.current) return;
                   quotesSectionRef.current.scrollIntoView({
                     behavior: "smooth",
                   });
@@ -68,7 +70,9 @@ export default function Home() {
   );
 }
 
-function ProfilePic({ className = "" }) {
+interface ProfilePicProps extends HasClassName {}
+
+function ProfilePic({ className = "" }: ProfilePicProps) {
   return (
     <div className={className}>
       <div className="clip-circle bg-teal-highlight pt-4">
@@ -93,7 +97,11 @@ function ProfilePic({ className = "" }) {
   );
 }
 
-function ScrollDown({ onClick }) {
+type ScrollDownProps = {
+  onClick: React.MouseEventHandler<HTMLImageElement>;
+};
+
+function ScrollDown({ onClick }: ScrollDownProps) {
   return (
     <div className="scroll-down">
       <div className="text" aria-hidden>

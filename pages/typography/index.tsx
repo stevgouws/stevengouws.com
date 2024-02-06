@@ -1,11 +1,17 @@
 import Paper from "../../components/Paper";
 import Section from "../../components/Section";
 
+type HeadingLevel = Extract<
+  keyof JSX.IntrinsicElements,
+  "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
+>;
+const headingLevels: HeadingLevel[] = ["h1", "h2", "h3", "h4", "h5", "h6"];
+
 export default function Typography() {
   return (
     <Paper>
       <div>
-        {["h1", "h2", "h3", "h4", "h5", "h6"].map((Heading) => {
+        {headingLevels.map((Heading: HeadingLevel) => {
           return (
             <Section key={Heading}>
               <Heading>A Visual Type Scale</Heading>

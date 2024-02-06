@@ -1,7 +1,7 @@
 import Paper from "../../components/Paper";
 import Link from "../../components/Link";
 import Section from "../../components/Section";
-import List from "../../components/List";
+import List, { ListItems } from "../../components/List";
 import Icon from "../../components/Icon";
 import Duration from "./Duration";
 import Jobs from "./Jobs";
@@ -10,21 +10,23 @@ import { getNumberOfYearsFromDate, numberOfYearsExperience } from "../../utils";
 export default function CV() {
   return (
     <Paper>
-      <Section>
-        <div className="flex-col flex justify-between items-baseline lg:flex-row print:flex-row">
-          <div className="flex flex-col flex-2">
-            <Heading />
-            <Introduction />
+      <>
+        <Section>
+          <div className="flex-col flex justify-between items-baseline lg:flex-row print:flex-row">
+            <div className="flex flex-col flex-2">
+              <Heading />
+              <Introduction />
+            </div>
+            <ContactDetails />
           </div>
-          <ContactDetails />
-        </div>
-      </Section>
-      <Jobs />
-      <Section avoidPrintPageBreak>
-        <HospitalityCareer />
-        <Education />
-        <Hobbies />
-      </Section>
+        </Section>
+        <Jobs />
+        <Section avoidPrintPageBreak>
+          <HospitalityCareer />
+          <Education />
+          <Hobbies />
+        </Section>
+      </>
     </Paper>
   );
 }
@@ -89,14 +91,26 @@ function ContactDetails() {
   );
 }
 
-function TwoColumns({ heading, location, duration, children }) {
+interface TwoColumnsProps {
+  heading: string;
+  location: string;
+  duration: string;
+  children: ListItems[number];
+}
+
+function TwoColumns({
+  heading,
+  location,
+  duration,
+  children,
+}: TwoColumnsProps) {
   return (
     <div className="mb-4 flex flex-col lg:items-center lg:justify-between lg:flex-row print:items-center print:justify-between print:flex-row">
       <div>
         <h3>{heading}</h3>
         {(location || duration) && (
           <div className="flex flex-col mb-4 lg:mb-0 print:mb-0">
-            <Icon name="location" text={location} classes="mr-2" />
+            <Icon name="location" text={location} className="mr-2" />
             <Duration duration={duration}></Duration>
           </div>
         )}
@@ -141,14 +155,14 @@ function Hobbies() {
     <div className="mb-4 lg:flex lg:items-center lg:justify-between print:flex print:items-center print:justify-between">
       <h3 className="lg:mb-0 print:mb-0">Hobbies</h3>
       <div className="lg:w-9/12 lg:flex print:w-9/12 print:flex">
-        <List items={["Reading", "Playing guitar"]} classes="flex-1" />
+        <List items={["Reading", "Playing guitar"]} className="flex-1" />
         <List
           items={[
             `Hanging out with that crazy cat, my ${getNumberOfYearsFromDate(
               new Date("2018-01-13")
             )}year-old daughter Zoe`,
           ]}
-          classes="flex-2"
+          className="flex-2"
         />
       </div>
     </div>

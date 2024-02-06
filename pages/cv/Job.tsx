@@ -2,6 +2,22 @@ import Icon from "../../components/Icon";
 import List from "../../components/List";
 import Section from "../../components/Section";
 import Duration from "./Duration";
+import { ListItems } from "../../components/List";
+
+export interface Job {
+  company: string;
+  position: string;
+  duration: string;
+  location: string;
+  achievements?: ListItems;
+  exampleTasks: ListItems;
+  techStack: ListItems;
+  softSkills?: ListItems;
+}
+
+interface JobProps extends Job {
+  children?: React.ReactNode;
+}
 
 export default function Job({
   children,
@@ -13,7 +29,7 @@ export default function Job({
   exampleTasks = [],
   techStack = [],
   softSkills = [],
-}) {
+}: JobProps) {
   return (
     <Section>
       <Heading
@@ -39,12 +55,12 @@ export default function Job({
         <div className="flex mt-4 md:w-1/4 md:block md:mt-0 md:ml-4 print:w-1/4 print:block print:mt-0 print:ml-4">
           <div>
             <h4>Tech</h4>
-            <List items={techStack} noWrap styleType="dash" styleInside />
+            <List items={techStack} noWrap styleTypeDash styleInside />
           </div>
           {softSkills.length > 0 ? (
             <div className="ml-8 md:mt-4 print:mt-4 md:ml-0 print:ml-0">
               <h4>Soft Skills</h4>
-              <List items={softSkills} styleType="dash" styleInside />
+              <List items={softSkills} styleTypeDash styleInside />
             </div>
           ) : null}
         </div>
@@ -53,7 +69,12 @@ export default function Job({
   );
 }
 
-function Heading({ position, company, location, duration }) {
+function Heading({
+  position,
+  company,
+  location,
+  duration,
+}: Pick<Job, "position" | "company" | "location" | "duration">) {
   return (
     <div className="my-4">
       <h3>
@@ -66,7 +87,7 @@ function Heading({ position, company, location, duration }) {
         </span>
       </h3>
       <div className="flex-col flex md:flex-row print:flex-row">
-        <Icon name="location" text={location} classes="mr-2" />
+        <Icon name="location" text={location} className="mr-2" />
         <Duration duration={duration} />
       </div>
     </div>
