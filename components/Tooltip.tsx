@@ -14,13 +14,21 @@ import {
   useMergeRefs,
   FloatingPortal,
 } from "@floating-ui/react";
+import type { Placement } from "@floating-ui/react";
+
+interface TooltipOptions {
+  initialOpen?: boolean;
+  placement?: Placement;
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
+}
 
 export function useTooltip({
   initialOpen = false,
   placement = "top",
   open: controlledOpen,
   onOpenChange: setControlledOpen,
-}) {
+}: TooltipOptions = {}) {
   const [uncontrolledOpen, setUncontrolledOpen] = React.useState(initialOpen);
 
   const open = controlledOpen ?? uncontrolledOpen;
@@ -67,7 +75,9 @@ export function useTooltip({
   );
 }
 
-const TooltipContext = React.createContext(null);
+type ContextType = ReturnType<typeof useTooltip> | null;
+
+const TooltipContext = React.createContext<ContextType>(null);
 
 export const useTooltipContext = () => {
   const context = React.useContext(TooltipContext);
@@ -79,7 +89,10 @@ export const useTooltipContext = () => {
   return context;
 };
 
-export function Tooltip({ children, ...options }) {
+export function Tooltip({
+  children,
+  ...options
+}: { children: React.ReactNode } & TooltipOptions) {
   // This can accept any props as options, e.g. `placement`,
   // or other positioning options.
   const tooltip = useTooltip(options);
@@ -90,12 +103,13 @@ export function Tooltip({ children, ...options }) {
   );
 }
 
-export const TooltipTrigger = React.forwardRef(function TooltipTrigger(
-  { children, asChild = false, ...props },
-  propRef
-) {
+export const TooltipTrigger = React.forwardRef<
+  HTMLElement,
+  React.HTMLProps<HTMLElement> & { asChild?: boolean }
+>(function TooltipTrigger({ children, asChild = false, ...props }, propRef) {
   const context = useTooltipContext();
-  const childrenRef = children.ref;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const childrenRef = (children as any).ref;
   const ref = useMergeRefs([context.refs.setReference, propRef, childrenRef]);
 
   // `asChild` allows the user to pass any element as the anchor
@@ -123,10 +137,10 @@ export const TooltipTrigger = React.forwardRef(function TooltipTrigger(
   );
 });
 
-export const TooltipContent = React.forwardRef(function TooltipContent(
-  { style, ...props },
-  propRef
-) {
+export const TooltipContent = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLProps<HTMLDivElement>
+>(function TooltipContent({ style, ...props }, propRef) {
   const context = useTooltipContext();
   const ref = useMergeRefs([context.refs.setFloating, propRef]);
 
@@ -135,7 +149,6 @@ export const TooltipContent = React.forwardRef(function TooltipContent(
   return (
     <FloatingPortal>
       <div
-        className="tooltip"
         ref={ref}
         style={{
           ...context.floatingStyles,
@@ -143,19 +156,6 @@ export const TooltipContent = React.forwardRef(function TooltipContent(
         }}
         {...context.getFloatingProps(props)}
       />
-      <style jsx>{`
-        .tooltip {
-          background-color: color-mix(
-            in srgb,
-            var(--blue-dark) 85%,
-            transparent
-          );
-          color: white;
-          padding: 0.5rem 1rem;
-          border-radius: 8px;
-          text-align: center;
-        }
-      `}</style>
     </FloatingPortal>
   );
 });

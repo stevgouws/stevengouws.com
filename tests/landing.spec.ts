@@ -1,4 +1,4 @@
-const { test, expect } = require("@playwright/test");
+import { test, expect } from "@playwright/test";
 
 test.describe("Landing page", async () => {
   test.beforeEach(async ({ page }) => {

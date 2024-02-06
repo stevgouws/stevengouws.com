@@ -1,4 +1,16 @@
-export default function Link({ children, href, target, displayBlock }) {
+interface LinkProps {
+  children: string;
+  href: string;
+  target?: "_blank";
+  displayBlock?: boolean;
+}
+
+export default function Link({
+  children,
+  href,
+  target,
+  displayBlock = false,
+}: LinkProps) {
   return (
     <a
       href={href}

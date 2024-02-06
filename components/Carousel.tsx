@@ -1,17 +1,22 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import useSound from "use-sound";
 import swipeMp3 from "../public/sounds/swipe.mp3";
 import swipeBackMp3 from "../public/sounds/swipe-back.mp3";
 import shrpMp3 from "../public/sounds/shrp.mp3";
+import { HasClassName } from "../types";
 
-export default function Carousel({ children, className = "" }) {
+interface CarouselProps extends HasClassName {
+  children: React.ReactNode[];
+}
+
+export default function Carousel({ children, className = "" }: CarouselProps) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-  const containerRef = useRef();
+  const containerRef = useRef<HTMLDivElement>(null);
   const [playSwipe] = useSound(swipeMp3);
   const [playSwipeBack] = useSound(swipeBackMp3);
   const [playSwipeFast] = useSound(shrpMp3);
 
-  function scrollToSlide(index) {
+  function scrollToSlide(index: number) {
     if (!containerRef.current) return;
     const numberOfSlidesToScroll = Math.abs(index - currentSlideIndex);
 
@@ -74,7 +79,13 @@ export default function Carousel({ children, className = "" }) {
   );
 }
 
-function NavButton({ onClick, hide, direction }) {
+type NavButtonProps = {
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  hide: boolean;
+  direction: "left" | "right";
+};
+
+function NavButton({ onClick, hide, direction }: NavButtonProps) {
   return (
     <button
       className={`flex items-center hover:opacity-75 justify-center ${
@@ -110,11 +121,21 @@ function NavButton({ onClick, hide, direction }) {
   );
 }
 
-function ProgressIndicator({ count, currentSlideIndex, scrollToSlide }) {
+type ProgressIndicatorProps = {
+  count: number;
+  currentSlideIndex: number;
+  scrollToSlide: (index: number) => void;
+};
+
+function ProgressIndicator({
+  count,
+  currentSlideIndex,
+  scrollToSlide,
+}: ProgressIndicatorProps) {
   return (
     <div>
       <div className="progress-indicator flex justify-center items-end h-4">
-        {new Array(count).fill().map((_, index) => (
+        {new Array(count).fill(undefined).map((_, index) => (
           <div
             key={index}
             className={`bar mx-1 bg-blue-dark ${

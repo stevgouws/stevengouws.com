@@ -1,3 +1,12 @@
+interface QuoteCardProps {
+  name: string;
+  title: string;
+  quote: string;
+  profilePicFileName: string;
+  profilePicAlt: string;
+  linkedInUrl: string;
+}
+
 export function QuoteCard({
   name,
   title,
@@ -5,7 +14,7 @@ export function QuoteCard({
   profilePicFileName,
   profilePicAlt,
   linkedInUrl,
-}) {
+}: QuoteCardProps) {
   return (
     <>
       <div className="review-card-wrapper">
@@ -140,12 +149,12 @@ export function QuoteCard({
   );
 }
 
-function replaceAsterisksWithBoldTags(text) {
+function replaceAsterisksWithBoldTags(text: string): string[] {
   const emphasisRegex = /\*(.*?)\*/g;
   const matches = text.matchAll(emphasisRegex);
   const emphasisRanges = [...matches].map((match) => ({
-    start: match.index,
-    end: match.index + match[0].length,
+    start: match.index ?? 0,
+    end: (match.index ?? 0) + match[0].length,
     text: match[1],
   }));
 

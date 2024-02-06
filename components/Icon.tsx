@@ -1,3 +1,5 @@
+import { HasClassName } from "../types";
+
 const icons = {
   calendar:
     "M1 4c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4zm2 2v12h14V6H3zm2-6h2v2H5V0zm8 0h2v2h-2V0zM5 9h2v2H5V9zm0 4h2v2H5v-2zm4-4h2v2H9V9zm0 4h2v2H9v-2zm4-4h2v2h-2V9zm0 4h2v2h-2v-2z",
@@ -11,17 +13,24 @@ const icons = {
     "M20 18.35V19a1 1 0 0 1-1 1h-2A17 17 0 0 1 0 3V1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4c0 .56-.31 1.31-.7 1.7L3.16 8.84c1.52 3.6 4.4 6.48 8 8l2.12-2.12c.4-.4 1.15-.71 1.7-.71H19a1 1 0 0 1 .99 1v3.35z",
 };
 
-export default function Icon({ name, text, classes: additionalClasses }) {
+type IconName = keyof typeof icons;
+
+interface IconProps extends HasClassName {
+  name: IconName;
+  text: string;
+}
+
+export default function Icon({ name, text, className }: IconProps) {
   if (!text) return <SVG name={name} />;
   return (
-    <div className={`${additionalClasses} flex items-center`}>
+    <div className={`${className} flex items-center`}>
       <SVG name={name} />
       <div>{text}</div>
     </div>
   );
 }
 
-function SVG({ name }) {
+function SVG({ name }: { name: IconName }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
