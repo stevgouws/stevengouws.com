@@ -6,7 +6,7 @@ import shrpMp3 from "../public/sounds/shrp.mp3";
 import { HasClassName } from "../types";
 
 interface CarouselProps extends HasClassName {
-  children: React.ReactNode[];
+  children: React.ReactElement[];
 }
 
 export default function Carousel({ children, className = "" }: CarouselProps) {
