@@ -57,7 +57,7 @@ function Introduction() {
       <p className="mb-0">
         I'm always keen to learn and grow my skills. I get a kick out of it
         every single time I learn a shorter, cleaner, faster or more
-        maintainable way to code something and I use{" "}
+        maintainable way to build something and I use{" "}
         <Link href="https://ncase.me/remember/" target="_blank">
           spaced repetition learning
         </Link>{" "}
