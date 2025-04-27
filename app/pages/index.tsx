@@ -1,14 +1,11 @@
-"use client";
-
-import Image from "next/image";
-import { useRef } from "react";
-import Button from "@/components/Button";
-import Quotes from "@/containers/quotes";
-import { numberOfYearsExperience } from "@/utils";
-import { HasClassName } from "@/types";
+import React from "react";
+import Button from "../components/Button";
+import Quotes from "../containers/quotes";
+import { numberOfYearsExperience } from "../utils";
+import { HasClassName } from "../types";
 
 export default function Home() {
-  const quotesSectionRef = useRef<HTMLDivElement>(null);
+  const quotesSectionRef = React.useRef<HTMLDivElement>(null);
   return (
     <div>
       <main>
