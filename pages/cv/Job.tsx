@@ -13,6 +13,7 @@ export interface Job {
   exampleTasks: ListItems;
   techStack: ListItems;
   softSkills?: ListItems;
+  showHrOnPrint?: boolean;
 }
 
 interface JobProps extends Job {
@@ -29,9 +30,10 @@ export default function Job({
   exampleTasks = [],
   techStack = [],
   softSkills = [],
+  showHrOnPrint = false,
 }: JobProps) {
   return (
-    <Section>
+    <Section showHrOnPrint={showHrOnPrint}>
       <Heading
         position={position}
         company={company}

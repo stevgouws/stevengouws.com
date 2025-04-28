@@ -21,7 +21,7 @@ export default function CV() {
           </div>
         </Section>
         <Jobs />
-        <Section avoidPrintPageBreak>
+        <Section>
           <HospitalityCareer />
           <Education />
           <Hobbies />
@@ -156,7 +156,7 @@ function Hobbies() {
       <h3 className='lg:mb-0 print:mb-0'>Hobbies</h3>
       <div className='lg:w-9/12 lg:flex print:w-9/12 print:flex'>
         <List
-          items={["Reading", "Messing around with my custom keyboard config"]}
+          items={["Reading", "Tinkering with my custom keyboard config"]}
           className='flex-1'
         />
         <List
@@ -164,7 +164,7 @@ function Hobbies() {
             "Playing guitar",
             `Hanging out with that crazy cat, my ${getNumberOfYearsFromDate(
               new Date("2018-01-13")
-            )}year-old daughter Zoe`,
+            )}-year-old daughter Zoe`,
           ]}
           className='flex-2'
         />

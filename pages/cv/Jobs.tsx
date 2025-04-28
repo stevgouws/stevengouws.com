@@ -16,8 +16,8 @@ export default function Jobs() {
           "Championed documentation and processes that would help other teams who had to interact with our services",
         ]}
         exampleTasks={[
-          "Lead on building a feature to bulk-upload users, imported via SFTP and AWS S3",
-          "Implemented backed CSV data parsing and event publication using NATS",
+          "Lead on building a feature to bulk-upload users, imported via SFTP and S3",
+          "Implemented backend CSV data parsing and event publication using NATS",
           "Helped convert a legacy AngularJS project to React",
           "Implemented new Front End authentication flow using Zitadel and created tools to allow easy testing of different auth scenarios for all micro-front-ends",
           "Proposed and lead the implementation for Mock Service Worker for use in Front End component testing which was adopted by all teams",
@@ -26,18 +26,18 @@ export default function Jobs() {
           "React & Redux",
           "Node & ExpressJS",
           "TypeScript",
-          "Micro front-ends with RSbuild",
           "Microservices",
+          "Micro-front-ends",
           "Event based architecture",
           "AWS & Docker",
           "Playwright",
-          "Drizzle",
           "Vite & Vitest",
           "React Testing Library",
           "Tanstack Query",
           "Storybook",
           "Tailwind",
           "PostgreSQL",
+          // "Drizzle",
           // "MUI",
           // "Yup",
         ]}
@@ -53,6 +53,7 @@ export default function Jobs() {
         </p>
       </Job>
       <Job
+        showHrOnPrint
         company='Fika Community Ltd'
         position='Senior Software Engineer'
         duration='May 2021 – Feb 2024'
@@ -123,13 +124,14 @@ export default function Jobs() {
           "Contentful",
         ]}
         softSkills={[
-          "Line management & mentoring",
-          "Agile",
+          "Line management",
+          "Mentoring",
           "Code reviews",
           "Feature spikes",
           "Presentations",
           "Pair programming",
           "Interviewing",
+          "Agile",
         ]}
       >
         <p>
@@ -142,6 +144,7 @@ export default function Jobs() {
         <p> Unfortunately Fika was Liquidated in Feb 2024.</p>
       </Job>
       <Job
+        showHrOnPrint
         company='Ingresso Group Ltd'
         position='Front-End Engineer'
         duration='March 2019 – May 2021'
@@ -206,6 +209,7 @@ export default function Jobs() {
         </p>
       </Job>
       <Job
+        showHrOnPrint
         company='Ebit Technologies'
         position='Software Developer'
         duration={"Apr 2016 – Feb 2019"}
@@ -255,6 +259,7 @@ export default function Jobs() {
         </p>
       </Job>
       <Job
+        showHrOnPrint
         company='Admakers International'
         position='Web Developer'
         duration='September 2015 – March 2016'
