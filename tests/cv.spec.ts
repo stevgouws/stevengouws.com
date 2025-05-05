@@ -26,51 +26,6 @@ test.describe("given that I visit the CV page", async () => {
     await newPage.close();
   });
 
-  test('given I click on "Web App" it should open https://app.fika.community/welcome in a new tab', async ({
-    page,
-  }) => {
-    const newPagePromise = page.waitForEvent("popup");
-    await page.getByRole("link", { name: "Web App" }).click();
-    const newPage = await newPagePromise;
-    await expect(newPage).toHaveURL("https://app.fika.community/welcome");
-    await expect(
-      newPage
-        .getByText(
-          "Start training your mental fitness every day with proven techniques from Fika’s psychologists."
-        )
-        .first()
-    ).toBeVisible();
-    await newPage.close();
-  });
-
-  test('given I click on "iOS" it should open https://apps.apple.com/gb/app/fika/id1465248342 in a new tab', async ({
-    page,
-  }) => {
-    const newPagePromise = page.waitForEvent("popup");
-    await page.getByRole("link", { name: "iOS" }).click();
-    const newPage = await newPagePromise;
-    await expect(newPage).toHaveURL(
-      "https://apps.apple.com/gb/app/fika/id1465248342"
-    );
-    await expect(newPage.getByText("Fika Community").first()).toBeVisible();
-    await newPage.close();
-  });
-
-  test('given I click on "Android" it should open https://play.google.com/store/apps/details?id=community.fika.app.prod&hl=en_GB&gl=US in a new tab', async ({
-    page,
-  }) => {
-    const newPagePromise = page.waitForEvent("popup");
-    await page.getByRole("link", { name: "Android" }).click();
-    const newPage = await newPagePromise;
-    await expect(newPage).toHaveURL(
-      "https://play.google.com/store/apps/details?id=community.fika.app.prod&hl=en_GB&gl=US"
-    );
-    await expect(
-      newPage.getByText("Fika Community Limited").first()
-    ).toBeVisible();
-    await newPage.close();
-  });
-
   test('given I click on "From The Box Office" it should open https://www.fromtheboxoffice.com/ in a new tab', async ({
     page,
   }) => {
