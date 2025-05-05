@@ -34,7 +34,7 @@ test.describe("given that I visit the CV page", async () => {
     const newPage = await newPagePromise;
     await expect(newPage).toHaveURL("https://www.fromtheboxoffice.com/");
     await expect(
-      newPage.getByText("Book Official London Theatre Tickets").first()
+      newPage.getByText("From The Box Office").first()
     ).toBeVisible();
     await newPage.close();
   });
