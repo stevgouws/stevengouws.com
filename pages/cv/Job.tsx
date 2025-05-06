@@ -54,13 +54,13 @@ export default function Job({
             <List items={exampleTasks} />
           </div>
         </div>
-        <div className="flex mt-4 md:w-1/4 md:block md:mt-0 md:ml-4 print:w-1/4 print:block print:mt-0 print:ml-4">
+        <div className="mt-4 md:w-1/4 md:mt-0 md:ml-4 print:w-1/4 print:mt-0 print:ml-4">
           <div>
             <h4>Tech</h4>
             <List items={techStack} noWrap styleTypeDash styleInside />
           </div>
           {softSkills.length > 0 ? (
-            <div className="ml-8 md:mt-4 print:mt-4 md:ml-0 print:ml-0">
+            <div className="mt-4">
               <h4>Soft Skills</h4>
               <List items={softSkills} styleTypeDash styleInside />
             </div>
